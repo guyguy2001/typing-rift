@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbbv6hrdap1g2"]
+
+[ext_resource type="Texture2D" uid="uid://bptx2opg8nea7" path="res://assets/Alien Spaceship Pack/PNG/shipPink_manned.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://y407b6wthejp" path="res://scenes/player.gd" id="1_qhqgy"]
+[ext_resource type="Script" path="res://scenes/sprite_2d.gd" id="3_dqkch"]
+
+[node name="Player" type="Node2D" groups=["player"]]
+script = ExtResource("1_qhqgy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -46)
+texture = ExtResource("1_3vyb7")
+script = ExtResource("3_dqkch")

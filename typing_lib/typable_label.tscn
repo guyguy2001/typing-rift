@@ -1,0 +1,12 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://typing_lib/typable_label.gd" id="1"]
+
+[node name="TypableLabel" type="RichTextLabel"]
+script = ExtResource("1")
+custom_minimum_size = Vector2(0, 20)
+size_flags_horizontal = 3
+size_flags_vertical = 4
+bbcode_enabled = true
+fit_content = true
+text = "TypableLabel"
