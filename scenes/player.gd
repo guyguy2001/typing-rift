@@ -8,4 +8,5 @@ func _process(delta: float) -> void:
 	if target:
 		position += (target.position - position).normalized() * delta * speed
 		if (target.position - position).length() < close_threshold:
+			target.set_active()
 			target = null
