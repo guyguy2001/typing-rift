@@ -19,3 +19,4 @@ config/icon="res://icon.svg"
 
 InputBufferG="*res://typing_lib/input_buffer.gd"
 SidequestManager="*res://scenes/sidequest/sidequest_manager.gd"
+Inventory="*res://scenes/inventory.gd"
