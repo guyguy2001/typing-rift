@@ -1,17 +1,18 @@
-[gd_scene load_steps=14 format=4 uid="uid://cfemeilrxja36"]
+[gd_scene load_steps=13 format=4 uid="uid://cfemeilrxja36"]
 
 [ext_resource type="Texture2D" uid="uid://cygyl7qve7ets" path="res://assets/Hexagon Pack/Spritesheets/hexagonAll_sheet.png" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cvqot8uxq488i" path="res://scenes/tiles/mine.tscn" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dbbv6hrdap1g2" path="res://scenes/player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://djhysbhiuon4v" path="res://scenes/tiles/guardian.tscn" id="2_kek77"]
 [ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dp7xul80idw6f" path="res://scenes/inventory_ui.tscn" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dkn8qucpyi1xk" path="res://typing_lib/input_feedback_bar.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://thu73l027jrk" path="res://scenes/sidequest/sidequest_gui.gd" id="5_272bh"]
-[ext_resource type="Texture2D" uid="uid://dtkflgqbm3vd6" path="res://icon.svg" id="6_kek77"]
-[ext_resource type="Script" uid="uid://dwiatkak5y442" path="res://inventory_ui.gd" id="7_272bh"]
 [ext_resource type="Resource" uid="uid://dk5alvthpib7m" path="res://resources/player_inventory.tres" id="8_5vw27"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_272bh"]
 scenes/1/scene = ExtResource("1_7mycd")
+scenes/2/scene = ExtResource("2_kek77")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("1_0xm2m")
@@ -179,16 +180,13 @@ tile_size = Vector2i(120, 138)
 sources/7 = SubResource("TileSetAtlasSource_1bvp3")
 sources/0 = SubResource("TileSetScenesCollectionSource_272bh")
 
-[sub_resource type="LabelSettings" id="LabelSettings_4c57u"]
-font_size = 12
-
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(492, 358)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Node2D"]
-tile_map_data = PackedByteArray("AAD/////BwAGAAUAAAAAAP//BwAGAAUAAAAAAP7/BwAGAAUAAAD///7/BwAGAAUAAAD+////BwAGAAAAAAD//wAABwAGAAUAAAAAAAAABwAGAAUAAAD///3/BwAGAAUAAAD+//7/BwAGAAUAAAD9////BwAGAAUAAAAAAP3/BwAGAAUAAAD+/wAABwAGAAUAAAD//wEABwAGAAUAAAD9/wAABwAGAAUAAAABAP7/AAAAAAAAAQD8/wEABwAGAAUAAAABAAEABwAGAAAAAAD8/wIABwAGAAUAAAD9/wIABwAGAAUAAAD+/wIABwAGAAUAAAD//wIABwAGAAUAAAAAAAIABwAGAAUAAAABAAIABwAGAAUAAAACAAIABwAGAAUAAAADAAIABwAGAAUAAAAEAAIABwAGAAUAAAAFAAIABwAGAAUAAAAEAAEABwAGAAUAAAAFAAAABwAGAAUAAAAEAP//BwAGAAUAAAAFAP7/BwAGAAUAAAAEAP3/BwAGAAUAAAAFAPz/BwAGAAUAAAAEAPz/BwAGAAUAAAADAPz/BwAGAAUAAAACAPz/BwAGAAUAAAABAPz/BwAGAAUAAAAAAPz/BwAGAAUAAAD///z/BwAGAAUAAAD+//z/BwAGAAUAAAD9//z/BwAGAAUAAAD8//z/BwAGAAUAAAD7//3/BwAGAAUAAAD8//7/BwAGAAUAAAD7//7/BwAGAAUAAAD7////BwAGAAUAAAD7/wAABwAGAAUAAAD7/wEABwAGAAUAAAD8/wAABwAGAAUAAAD8////BwAGAAUAAAD9//7/BwAGAAUAAAD8//3/BwAKAAkAAAD9//3/BwAGAAAAAAD+//3/BwAGAAUAAAD9/wEABwAGAAAAAAD7/wIABwAGAAUAAAD+/wEABwAGAAUAAAAAAAEABwAGAAUAAAACAAEABwAGAAUAAAADAAEABwAGAAUAAAAEAAAABwAGAAAAAAAEAP7/BwAGAAAAAAADAP3/BwAGAAUAAAACAP3/BwAGAAUAAAACAP7/BwAGAAUAAAABAP//BwAGAAUAAAACAAAABwAGAAUAAAADAAAABwAGAAUAAAADAP//BwAGAAUAAAADAP7/BwAGAAUAAAABAAAABwAGAAUAAAACAP//BwAGAAUAAAABAP3/BwAGAAUAAAAFAP3/BwAGAAUAAAAFAAEABwAGAAUAAAAFAP//BwAGAAUAAAD7//z/BwAGAAUAAAA=")
+tile_map_data = PackedByteArray("AAD/////BwAGAAUAAAAAAP//BwAGAAUAAAAAAP7/BwAGAAUAAAD///7/BwAGAAUAAAD+////BwAGAAAAAAD//wAABwAGAAUAAAAAAAAABwAGAAUAAAD///3/BwAGAAUAAAD+//7/BwAGAAUAAAD9////BwAGAAUAAAAAAP3/BwAGAAUAAAD+/wAABwAGAAUAAAD//wEABwAGAAUAAAD9/wAABwAGAAUAAAABAP7/AAAAAAAAAQD8/wEABwAGAAUAAAABAAEABwAGAAAAAAD8/wIABwAGAAUAAAD9/wIABwAGAAUAAAD+/wIABwAGAAUAAAD//wIABwAGAAUAAAAAAAIABwAGAAUAAAABAAIABwAGAAUAAAACAAIABwAGAAUAAAADAAIABwAGAAUAAAAEAAIABwAGAAUAAAAFAAIABwAGAAUAAAAEAAEABwAGAAUAAAAFAAAABwAGAAUAAAAEAP//BwAGAAUAAAAFAP7/BwAGAAUAAAAEAP3/BwAGAAUAAAAFAPz/BwAGAAUAAAAEAPz/BwAGAAUAAAADAPz/BwAGAAUAAAACAPz/BwAGAAUAAAABAPz/BwAGAAUAAAAAAPz/BwAGAAUAAAD///z/BwAGAAUAAAD+//z/BwAGAAUAAAD9//z/BwAGAAUAAAD8//z/BwAGAAUAAAD7//3/BwAGAAUAAAD8//7/BwAGAAUAAAD7//7/BwAGAAUAAAD7////BwAGAAUAAAD7/wAABwAGAAUAAAD7/wEABwAGAAUAAAD8/wAABwAGAAUAAAD8////BwAGAAUAAAD9//7/BwAGAAUAAAD8//3/BwAKAAkAAAD9//3/BwAGAAAAAAD+//3/BwAGAAUAAAD9/wEABwAGAAAAAAD7/wIABwAGAAUAAAD+/wEABwAGAAUAAAAAAAEABwAGAAUAAAACAAEABwAGAAUAAAADAAEABwAGAAUAAAAEAAAABwAGAAAAAAAEAP7/BwAGAAAAAAACAP3/BwAGAAUAAAACAP7/BwAGAAUAAAABAP//BwAGAAUAAAACAAAABwAGAAUAAAADAAAABwAGAAUAAAADAP//AAAAAAAAAgADAP7/BwAGAAUAAAABAAAABwAGAAUAAAACAP//BwAGAAUAAAABAP3/BwAGAAUAAAAFAP3/BwAGAAUAAAAFAAEABwAGAAUAAAAFAP//BwAGAAUAAAD7//z/BwAGAAUAAAADAP3/BwAFAA0AAAA=")
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
@@ -196,38 +194,8 @@ position = Vector2(87, 453)
 speed = 500.0
 inventory = ExtResource("8_5vw27")
 
-[node name="InventoryUI" type="Panel" parent="Player"]
-offset_left = -19.0
-offset_top = -166.0
-offset_right = 21.0
-offset_bottom = -126.0
-script = ExtResource("7_272bh")
+[node name="InventoryUI" parent="Player" instance=ExtResource("5_5vw27")]
 inventory = ExtResource("8_5vw27")
-
-[node name="TextureRect" type="TextureRect" parent="Player/InventoryUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_kek77")
-expand_mode = 2
-
-[node name="Amount" type="Label" parent="Player/InventoryUI"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -7.0
-offset_top = -17.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "5"
-label_settings = SubResource("LabelSettings_4c57u")
-horizontal_alignment = 2
 
 [node name="Target2" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(127, 116)
@@ -242,8 +210,8 @@ offset_right = 635.0
 offset_bottom = 603.0
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_left = 826.0
-offset_top = 295.0
+offset_left = 996.0
+offset_top = 484.0
 offset_right = 1132.0
 offset_bottom = 633.0
 script = ExtResource("5_272bh")

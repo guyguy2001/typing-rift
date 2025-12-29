@@ -1,0 +1,29 @@
+[gd_scene load_steps=9 format=3 uid="uid://djhysbhiuon4v"]
+
+[ext_resource type="Texture2D" uid="uid://cygyl7qve7ets" path="res://assets/Hexagon Pack/Spritesheets/hexagonAll_sheet.png" id="1_u3gld"]
+[ext_resource type="Script" uid="uid://daq0xdxbtqli4" path="res://scenes/tiles/guardian.gd" id="2_nu3xq"]
+[ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="2_pxqpd"]
+[ext_resource type="Resource" uid="uid://brahryg57qppe" path="res://resources/copper.tres" id="3_2xhqs"]
+[ext_resource type="Script" uid="uid://c3e1c4f4nmgi7" path="res://scenes/inventory.gd" id="4_uocce"]
+[ext_resource type="PackedScene" uid="uid://dp7xul80idw6f" path="res://scenes/inventory_ui.tscn" id="6_24oye"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxqpd"]
+atlas = ExtResource("1_u3gld")
+region = Rect2(732, 1562, 120, 140)
+
+[sub_resource type="Resource" id="Resource_24oye"]
+script = ExtResource("4_uocce")
+capacity = 5
+metadata/_custom_type_script = "uid://c3e1c4f4nmgi7"
+
+[node name="Guardian" type="Sprite2D"]
+texture = SubResource("AtlasTexture_pxqpd")
+script = ExtResource("2_nu3xq")
+inventory = SubResource("Resource_24oye")
+needed_item = ExtResource("3_2xhqs")
+
+[node name="Target" parent="." instance=ExtResource("2_pxqpd")]
+word = "guardian"
+
+[node name="InventoryUI" parent="." instance=ExtResource("6_24oye")]
+inventory = SubResource("Resource_24oye")
