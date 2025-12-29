@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbyu27o8r0nw1"]
+
+[ext_resource type="Script" uid="uid://5ph3hkuv1dts" path="res://scenes/gui/healthbar.gd" id="1_wxvnk"]
+
+[node name="Healthabr" type="ProgressBar"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.0
+offset_top = -30.0
+offset_right = 97.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 6.47
+show_percentage = false
+script = ExtResource("1_wxvnk")

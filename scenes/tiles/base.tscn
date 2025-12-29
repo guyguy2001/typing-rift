@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://e0d0ppahbywl"]
+
+[ext_resource type="Script" uid="uid://dawbkgur2k0el" path="res://scenes/tiles/base.gd" id="1_u4rbv"]
+[ext_resource type="Script" uid="uid://cgeji4co3jb7v" path="res://scenes/health_component.gd" id="2_kbxp5"]
+[ext_resource type="Texture2D" uid="uid://digwcb4ltyjt7" path="res://assets/Hexagon Pack/PNG/Tiles/Terrain/Grass/grass_06.png" id="2_w8b43"]
+[ext_resource type="Texture2D" uid="uid://baldopfjxeifw" path="res://assets/Hexagon Pack/PNG/Objects/oldBuilding.png" id="3_kbxp5"]
+[ext_resource type="PackedScene" uid="uid://dbyu27o8r0nw1" path="res://scenes/gui/healthbar.tscn" id="5_kbxp5"]
+
+[node name="Crystal" type="Node2D"]
+script = ExtResource("1_u4rbv")
+
+[node name="HeathComponent" type="Node2D" parent="."]
+script = ExtResource("2_kbxp5")
+max_health = 100.0
+health = 90.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_w8b43")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture = ExtResource("3_kbxp5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -118.0
+offset_right = 20.0
+offset_bottom = -78.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Healthabr" parent="Control" node_paths=PackedStringArray("health_component") instance=ExtResource("5_kbxp5")]
+layout_mode = 1
+health_component = NodePath("../../HeathComponent")
