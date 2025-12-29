@@ -4,7 +4,7 @@ extends Node2D
 
 @onready var label : TypableLabel = $TypableLabel
 
-signal on_reached()
+signal on_reached(who: Player)
 
 func _ready() -> void:
 	self.label.target_text = word

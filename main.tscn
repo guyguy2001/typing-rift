@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://cfemeilrxja36"]
+[gd_scene load_steps=14 format=4 uid="uid://cfemeilrxja36"]
 
 [ext_resource type="Texture2D" uid="uid://cygyl7qve7ets" path="res://assets/Hexagon Pack/Spritesheets/hexagonAll_sheet.png" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://cvqot8uxq488i" path="res://scenes/tiles/mine.tscn" id="1_7mycd"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dkn8qucpyi1xk" path="res://typing_lib/input_feedback_bar.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://thu73l027jrk" path="res://scenes/sidequest/sidequest_gui.gd" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://dtkflgqbm3vd6" path="res://icon.svg" id="6_kek77"]
+[ext_resource type="Script" uid="uid://dwiatkak5y442" path="res://inventory_ui.gd" id="7_272bh"]
+[ext_resource type="Resource" uid="uid://dk5alvthpib7m" path="res://resources/player_inventory.tres" id="8_5vw27"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_272bh"]
 scenes/1/scene = ExtResource("1_7mycd")
@@ -176,6 +179,9 @@ tile_size = Vector2i(120, 138)
 sources/7 = SubResource("TileSetAtlasSource_1bvp3")
 sources/0 = SubResource("TileSetScenesCollectionSource_272bh")
 
+[sub_resource type="LabelSettings" id="LabelSettings_4c57u"]
+font_size = 12
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Node2D" type="Node2D" parent="."]
@@ -188,6 +194,40 @@ tile_set = SubResource("TileSet_lquwl")
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(87, 453)
 speed = 500.0
+inventory = ExtResource("8_5vw27")
+
+[node name="InventoryUI" type="Panel" parent="Player"]
+offset_left = -19.0
+offset_top = -166.0
+offset_right = 21.0
+offset_bottom = -126.0
+script = ExtResource("7_272bh")
+inventory = ExtResource("8_5vw27")
+
+[node name="TextureRect" type="TextureRect" parent="Player/InventoryUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_kek77")
+expand_mode = 2
+
+[node name="Amount" type="Label" parent="Player/InventoryUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = -17.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "5"
+label_settings = SubResource("LabelSettings_4c57u")
+horizontal_alignment = 2
 
 [node name="Target2" parent="." instance=ExtResource("3_h2yge")]
 position = Vector2(127, 116)

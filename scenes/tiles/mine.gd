@@ -1,9 +1,14 @@
 extends Sprite2D
 
+@export var resource: Item
+
+var _connected_inventory = null
+
 @onready var target = $Target
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	assert(self.resource != null)
 	target.on_reached.connect(self._activate)
 
 
@@ -20,10 +25,11 @@ func _get_words() -> Array[String]:
 	return words.slice(0, 3)
 
 func _on_mined(_word: String) -> void:
-	Inventory.copper += 1
-	print("Copper: " , Inventory.copper)
+	self._connected_inventory.try_add(self.resource, 1)
+	print(self._connected_inventory.item_type.name, self._connected_inventory.amount)
 
-func _activate() -> void:
+func _activate(player: Player) -> void:
+	self._connected_inventory = player.inventory
 	var sidequest = Sidequest.new()
 	sidequest.setup(self._get_words())
 	sidequest.item_done.connect(self._on_mined)
