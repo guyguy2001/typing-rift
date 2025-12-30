@@ -8,15 +8,15 @@ enum State {
 @export var speed: float = 100.0
 @export var state: State = State.MOVING
 
-var target: Node2D = null
+var target: Node2D = null:
+	set(value):
+		target = value
+		auto_attack_comp.target = target
 
-@onready var attack_cooldown: Timer = $AttackCooldown
+@onready var auto_attack_comp: AutoAttackComponent = $AutoAttackComponent
 
 
 const TARGET_GROUP = "attackable"
-
-func _ready() -> void:
-	attack_cooldown.timeout.connect(self._try_attack)
 
 func _find_closest_target() -> Node2D:
 	var closest_target: Node2D = null
@@ -44,7 +44,7 @@ func _moving_state(delta: float) -> void:
 		var direction = distance.normalized()
 		if distance.length() <= 50:
 			state = State.ATTACKING
-			attack_cooldown.start()
+			auto_attack_comp.start()
 			return
 
 		global_position += direction * speed * delta
@@ -52,10 +52,3 @@ func _moving_state(delta: float) -> void:
 func _attacking_state(_delta: float) -> void:
 	if target == null:
 		target = _find_closest_target()
-
-func _try_attack() -> void:
-	print("attack!")
-	var health_component: HealthComponent = target.get_node("HealthComponent")
-	if health_component != null:
-		health_component.damage(10)
-	
