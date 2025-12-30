@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://cfemeilrxja36"]
+[gd_scene load_steps=9 format=4 uid="uid://cfemeilrxja36"]
 
 [ext_resource type="TileSet" uid="uid://cmqohc760li2h" path="res://resources/main_tileset.tres" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://dbbv6hrdap1g2" path="res://scenes/player.tscn" id="2_h2yge"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dkn8qucpyi1xk" path="res://typing_lib/input_feedback_bar.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://thu73l027jrk" path="res://scenes/sidequest/sidequest_gui.gd" id="5_272bh"]
 [ext_resource type="Resource" uid="uid://dk5alvthpib7m" path="res://resources/player_inventory.tres" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cxi762quswxvk" path="res://scenes/enemy.tscn" id="8_kek77"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -56,3 +57,6 @@ offset_right = -5.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Enemy" parent="." instance=ExtResource("8_kek77")]
+position = Vector2(1079, 76)

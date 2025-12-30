@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://baldopfjxeifw" path="res://assets/Hexagon Pack/PNG/Objects/oldBuilding.png" id="3_kbxp5"]
 [ext_resource type="PackedScene" uid="uid://dbyu27o8r0nw1" path="res://scenes/gui/healthbar.tscn" id="5_kbxp5"]
 
-[node name="Crystal" type="Node2D"]
+[node name="Crystal" type="Node2D" groups=["attackable"]]
 script = ExtResource("1_u4rbv")
 
 [node name="HeathComponent" type="Node2D" parent="."]
