@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxi762quswxvk"]
+[gd_scene load_steps=6 format=3 uid="uid://cxi762quswxvk"]
 
 [ext_resource type="Script" uid="uid://cgeji4co3jb7v" path="res://scenes/health_component.gd" id="1_4ra3w"]
 [ext_resource type="Script" uid="uid://bpvmjc70825yd" path="res://scenes/enemy.gd" id="1_5uy6h"]
 [ext_resource type="Texture2D" uid="uid://br84bxm7nddlo" path="res://assets/Hexagon Base Pack/PNG/alienBlue.png" id="2_5uy6h"]
 [ext_resource type="PackedScene" uid="uid://dbyu27o8r0nw1" path="res://scenes/gui/healthbar.tscn" id="3_c4w8v"]
+[ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="5_c4w8v"]
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_5uy6h")
@@ -21,3 +22,8 @@ offset_top = -61.0
 offset_right = 27.0
 offset_bottom = -51.0
 health_component = NodePath("../HealthComponent")
+
+[node name="AttackCooldown" type="Timer" parent="."]
+
+[node name="Target" parent="." instance=ExtResource("5_c4w8v")]
+word = "enemy"

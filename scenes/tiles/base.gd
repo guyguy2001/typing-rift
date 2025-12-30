@@ -1,3 +1,3 @@
 extends Node2D
 
-@onready var healthbar = $Control/ProgressBar
+# @onready var healthbar = $Control/ProgressBar

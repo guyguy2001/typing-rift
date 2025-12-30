@@ -21,7 +21,6 @@ tile_set = ExtResource("1_272bh")
 
 [node name="Player" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(87, 453)
-speed = 500.0
 inventory = ExtResource("8_5vw27")
 
 [node name="InventoryUI" parent="Player" instance=ExtResource("5_5vw27")]
@@ -59,4 +58,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Enemy" parent="." instance=ExtResource("8_kek77")]
-position = Vector2(1079, 76)
+position = Vector2(637, 433)

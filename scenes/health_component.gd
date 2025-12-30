@@ -14,3 +14,6 @@ class_name HealthComponent
 
 signal max_health_changed(new_max_health: float)
 signal health_changed(new_health: float)
+
+func damage(amount: float) -> void:
+	health -= amount

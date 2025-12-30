@@ -9,7 +9,7 @@
 [node name="Crystal" type="Node2D" groups=["attackable"]]
 script = ExtResource("1_u4rbv")
 
-[node name="HeathComponent" type="Node2D" parent="."]
+[node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("2_kbxp5")
 max_health = 100.0
 health = 90.0
@@ -36,4 +36,4 @@ grow_vertical = 0
 
 [node name="Healthabr" parent="Control" node_paths=PackedStringArray("health_component") instance=ExtResource("5_kbxp5")]
 layout_mode = 1
-health_component = NodePath("../../HeathComponent")
+health_component = NodePath("../../HealthComponent")
