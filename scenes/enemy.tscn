@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cxi762quswxvk"]
+[gd_scene load_steps=8 format=3 uid="uid://cxi762quswxvk"]
 
 [ext_resource type="Script" uid="uid://cgeji4co3jb7v" path="res://scenes/health_component.gd" id="1_4ra3w"]
 [ext_resource type="Script" uid="uid://bpvmjc70825yd" path="res://scenes/enemy.gd" id="1_5uy6h"]
@@ -6,12 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dbyu27o8r0nw1" path="res://scenes/gui/healthbar.tscn" id="3_c4w8v"]
 [ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="5_c4w8v"]
 [ext_resource type="Script" uid="uid://bxlklcy24nqfh" path="res://scenes/components/auto_attack.gd" id="6_xwavj"]
+[ext_resource type="Script" uid="uid://g4bac60htvji" path="res://scenes/components/approach.gd" id="7_nenq2"]
 
-[node name="Enemy" type="Node2D"]
+[node name="Enemy" type="Node2D" groups=["enemy"]]
 script = ExtResource("1_5uy6h")
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("1_4ra3w")
+max_health = 50.0
+health = 50.0
 metadata/_custom_type_script = "uid://cgeji4co3jb7v"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -30,3 +33,8 @@ word = "enemy"
 [node name="AutoAttackComponent" type="Timer" parent="."]
 script = ExtResource("6_xwavj")
 metadata/_custom_type_script = "uid://bxlklcy24nqfh"
+
+[node name="ApproachComponent" type="Node" parent="."]
+script = ExtResource("7_nenq2")
+speed = 100.0
+metadata/_custom_type_script = "uid://g4bac60htvji"

@@ -1,8 +1,11 @@
 extends Node2D
 
+class_name Target
+
 @export var word: String
 
 @onready var label : TypableLabel = $TypableLabel
+@onready var parent: Node2D = get_parent()
 
 signal on_reached(who: Player)
 

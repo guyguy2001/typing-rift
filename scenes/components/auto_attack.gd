@@ -11,9 +11,15 @@ func _ready() -> void:
 	self.timeout.connect(self._attack)
 
 func _attack() -> void:
+	print("Attack")
 	if target == null:
 		print("ERROR: No target to attack!")
 		return
+
 	var health_component: HealthComponent = target.get_node("HealthComponent")
-	if health_component != null:
-		health_component.damage(attack_damage)
+	if health_component == null:
+		print("ERROR: Target has no HealthComponent to attack!")
+		return
+
+	print("Damage")
+	health_component.damage(attack_damage)
