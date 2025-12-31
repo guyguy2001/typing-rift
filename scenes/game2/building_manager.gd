@@ -13,9 +13,17 @@ signal building_selected(index: int, building_data: BuildingData)
 signal building_deselected()
 
 func _ready() -> void:
-	InputBufferG.word_submitted.connect(self.on_word_entered)
+	InputBufferG.word_submitted.connect(self._on_word_entered)
 
-func on_word_entered(typed_word: String) -> void:
+func _on_word_entered(typed_word: String) -> void:
 	for i in buildings.size():
 		if typed_word == buildings[i].name:
 			self.selected_index = i
+
+func get_selected_building() -> BuildingData:
+	if selected_index >= 0:
+		return buildings[selected_index]
+	return null
+
+func deselect_building() -> void:
+	self.selected_index = -1

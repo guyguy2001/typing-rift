@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2wy1rqbjc7gs"]
+[gd_scene load_steps=4 format=3 uid="uid://c2wy1rqbjc7gs"]
 
 [ext_resource type="Texture2D" uid="uid://d1kpth5xs3o08" path="res://assets/Hexagon Pack/PNG/Tiles/Terrain/Grass/grass_04.png" id="1_aogcp"]
+[ext_resource type="Script" uid="uid://3hjkmlu8osxl" path="res://scenes/game2/tiles/build_site.gd" id="1_cghku"]
 [ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="2_otlt2"]
 
 [node name="BuildSite" type="Node2D"]
+script = ExtResource("1_cghku")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_aogcp")
