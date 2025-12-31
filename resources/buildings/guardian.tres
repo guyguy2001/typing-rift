@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=4 format=3 uid="uid://b7gx5qtkhysje"]
+
+[ext_resource type="Script" uid="uid://dwqursnqeops7" path="res://scenes/game2/building_data.gd" id="1_g0hbe"]
+[ext_resource type="Texture2D" uid="uid://bngcqrooqimvi" path="res://assets/Hexagon Pack/PNG/Objects/turret_small.png" id="1_nar1d"]
+[ext_resource type="PackedScene" uid="uid://djhysbhiuon4v" path="res://scenes/tiles/guardian.tscn" id="2_4akjs"]
+
+[resource]
+script = ExtResource("1_g0hbe")
+name = "guardian"
+scene = ExtResource("2_4akjs")
+icon = ExtResource("1_nar1d")

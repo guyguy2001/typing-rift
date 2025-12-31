@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=3 uid="uid://cp5f2em23b5et"]
+
+[ext_resource type="Script" uid="uid://wheow8pibvpc" path="res://scenes/game2/building_manager.gd" id="1_p8glm"]
+[ext_resource type="Script" uid="uid://dwqursnqeops7" path="res://scenes/game2/building_data.gd" id="2_1pf2a"]
+[ext_resource type="Resource" uid="uid://b7gx5qtkhysje" path="res://resources/buildings/guardian.tres" id="3_nejao"]
+[ext_resource type="Resource" uid="uid://dqwe8vcv6rbpv" path="res://resources/buildings/base.tres" id="4_x73u7"]
+
+[node name="BuildingManager" type="Node"]
+script = ExtResource("1_p8glm")
+buildings = Array[ExtResource("2_1pf2a")]([ExtResource("3_nejao"), ExtResource("4_x73u7")])

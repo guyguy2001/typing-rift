@@ -22,6 +22,7 @@ func _setup_items():
 	if self.sidequest != null:
 		var is_first := true
 		for item in self.sidequest.items:
+			# TODO: Add a sword, pickaxe icon to the left of the word (or maybe to the right of it, to signify the spacebar?)
 			var label: TypableLabel = TypableLabelScene.instantiate()
 			label.target_text = item
 			label.active = is_first
