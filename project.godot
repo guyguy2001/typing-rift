@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 InputBufferG="*res://typing_lib/input_buffer.gd"
 SidequestManager="*res://scenes/sidequest/sidequest_manager.gd"
 BuildingManagerG="*res://scenes/game2/building_manager.tscn"
+WordsManagerG="*res://scenes/singletons/words_manager.tscn"
 
 [display]
 

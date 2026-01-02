@@ -2,7 +2,11 @@ extends Node2D
 
 class_name Target
 
-@export var word: String
+@export var word: String:
+	set(value):  # TODO: Probably replace with a Ref<String> resource?
+		print("Set ", value, " on ", self)
+		word = value
+		(func(): self.label.target_text = value).call_deferred()
 
 @onready var label : TypableLabel = $TypableLabel
 @onready var parent: Node2D = get_parent()
@@ -10,7 +14,6 @@ class_name Target
 signal on_reached(who: Player)
 
 func _ready() -> void:
-	self.label.target_text = word
 	InputBufferG.word_submitted.connect(_on_word_submitted)
 
 func _on_word_submitted(typed_word: String):

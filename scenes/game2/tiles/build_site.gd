@@ -5,6 +5,7 @@ extends Node2D
 func _ready() -> void:
 	assert(target != null)
 	self.target.on_reached.connect(_try_build)
+	target.word = WordsManagerG.get_word()
 
 func _try_build(_who: Node2D) -> void:
 	print("try build")
