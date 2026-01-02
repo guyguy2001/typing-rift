@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dkn8qucpyi1xk" path="res://typing_lib/input_feedback_bar.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://thu73l027jrk" path="res://scenes/sidequest/sidequest_gui.gd" id="5_272bh"]
 [ext_resource type="Resource" uid="uid://dk5alvthpib7m" path="res://resources/player_inventory.tres" id="8_5vw27"]
-[ext_resource type="PackedScene" uid="uid://cxi762quswxvk" path="res://scenes/enemy.tscn" id="8_kek77"]
+[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="8_kek77"]
 
 [node name="Node2D" type="Node2D"]
 

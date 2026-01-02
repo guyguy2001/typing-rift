@@ -23,6 +23,10 @@ BuildingManagerG="*res://scenes/game2/building_manager.tscn"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1152
+window/size/window_height_override=648
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -30,3 +34,7 @@ window/stretch/aspect="expand"
 
 attackable=""
 enemy=""
+
+[gui]
+
+theme/default_theme_scale=1.5
