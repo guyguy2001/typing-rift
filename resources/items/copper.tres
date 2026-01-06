@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://brahryg57qppe"]
+
+[ext_resource type="Texture2D" uid="uid://dfxa1wm8hv2s0" path="res://assets/Hexagon Pack/PNG/Objects/rockBrown_large.png" id="1_nay73"]
+[ext_resource type="Script" uid="uid://bluhduwbwtt1d" path="res://resources/item.gd" id="2_g5gwp"]
+
+[resource]
+script = ExtResource("2_g5gwp")
+icon = ExtResource("1_nay73")
+name = "Copper"
+metadata/_custom_type_script = "uid://bluhduwbwtt1d"

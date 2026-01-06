@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cygyl7qve7ets" path="res://assets/Hexagon Pack/Spritesheets/hexagonAll_sheet.png" id="1_u3gld"]
 [ext_resource type="Script" uid="uid://daq0xdxbtqli4" path="res://scenes/tiles/guardian.gd" id="2_nu3xq"]
 [ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="2_pxqpd"]
-[ext_resource type="Resource" uid="uid://brahryg57qppe" path="res://resources/copper.tres" id="3_2xhqs"]
-[ext_resource type="Script" uid="uid://c3e1c4f4nmgi7" path="res://scenes/inventory.gd" id="4_uocce"]
+[ext_resource type="Resource" uid="uid://brahryg57qppe" path="res://resources/items/copper.tres" id="3_2xhqs"]
+[ext_resource type="Script" path="res://scenes/inventory.gd" id="4_uocce"]
 [ext_resource type="PackedScene" uid="uid://dp7xul80idw6f" path="res://scenes/inventory_ui.tscn" id="6_24oye"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxqpd"]

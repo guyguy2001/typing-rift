@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://db41r2ni7viki"]
+
+[ext_resource type="Texture2D" uid="uid://ckhdhl6l358p5" path="res://assets/Hexagon Base Pack/PNG/treeBlue_high.png" id="1_w3n26"]
+[ext_resource type="Script" uid="uid://bluhduwbwtt1d" path="res://resources/item.gd" id="2_4004f"]
+
+[resource]
+script = ExtResource("2_4004f")
+icon = ExtResource("1_w3n26")
+name = "Wood"
+id = 3
+metadata/_custom_type_script = "uid://bluhduwbwtt1d"
