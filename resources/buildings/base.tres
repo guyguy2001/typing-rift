@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=4 format=3 uid="uid://dqwe8vcv6rbpv"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=5 format=3 uid="uid://dqwe8vcv6rbpv"]
 
+[ext_resource type="Script" uid="uid://bluhduwbwtt1d" path="res://resources/item.gd" id="1_hlfqm"]
 [ext_resource type="Texture2D" uid="uid://baldopfjxeifw" path="res://assets/Hexagon Pack/PNG/Objects/oldBuilding.png" id="1_ofiml"]
 [ext_resource type="PackedScene" uid="uid://e0d0ppahbywl" path="res://scenes/tiles/base.tscn" id="2_hlfqm"]
 [ext_resource type="Script" uid="uid://dwqursnqeops7" path="res://scenes/game2/building_data.gd" id="3_b8qm3"]
