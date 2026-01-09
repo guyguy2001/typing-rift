@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=5 format=3 uid="uid://dqwe8vcv6rbpv"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=6 format=3 uid="uid://dqwe8vcv6rbpv"]
 
 [ext_resource type="Script" uid="uid://bluhduwbwtt1d" path="res://resources/item.gd" id="1_hlfqm"]
 [ext_resource type="Texture2D" uid="uid://baldopfjxeifw" path="res://assets/Hexagon Pack/PNG/Objects/oldBuilding.png" id="1_ofiml"]
+[ext_resource type="Resource" uid="uid://db41r2ni7viki" path="res://resources/items/wood.tres" id="2_b8qm3"]
 [ext_resource type="PackedScene" uid="uid://e0d0ppahbywl" path="res://scenes/tiles/base.tscn" id="2_hlfqm"]
 [ext_resource type="Script" uid="uid://dwqursnqeops7" path="res://scenes/game2/building_data.gd" id="3_b8qm3"]
 
@@ -10,3 +11,6 @@ script = ExtResource("3_b8qm3")
 name = "base"
 scene = ExtResource("2_hlfqm")
 icon = ExtResource("1_ofiml")
+cost = Dictionary[ExtResource("1_hlfqm"), int]({
+ExtResource("2_b8qm3"): 5
+})

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch3bpa1bpo82s"]
+
+[ext_resource type="Script" uid="uid://cnh4l557d5e28" path="res://scenes/game2/ui/item_amount.gd" id="1_6wdus"]
+[ext_resource type="Texture2D" uid="uid://dm4jn77k22knu" path="res://assets/Hexagon Pack/PNG/Objects/log.png" id="1_e3ldy"]
+
+[node name="ItemAmount" type="HBoxContainer"]
+script = ExtResource("1_6wdus")
+
+[node name="Amount" type="Label" parent="."]
+layout_mode = 2
+text = "3"
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("1_e3ldy")
+stretch_mode = 3

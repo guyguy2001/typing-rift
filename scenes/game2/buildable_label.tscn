@@ -1,11 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://cf5kqka6brca7"]
+[gd_scene load_steps=6 format=3 uid="uid://cf5kqka6brca7"]
 
 [ext_resource type="Script" uid="uid://cj52a61aps5f5" path="res://scenes/game2/buildable_label.gd" id="1_algya"]
 [ext_resource type="Texture2D" uid="uid://buc1231m8raor" path="res://assets/Hexagon Pack/PNG/Objects/farm.png" id="1_ftqir"]
 [ext_resource type="PackedScene" uid="uid://df521ffn10g7w" path="res://typing_lib/typable_label.tscn" id="2_algya"]
+[ext_resource type="Resource" uid="uid://dqwe8vcv6rbpv" path="res://resources/buildings/base.tres" id="2_u7h1e"]
+[ext_resource type="PackedScene" uid="uid://dvabml57v55xi" path="res://scenes/game2/ui/cost_line.tscn" id="4_4u4ee"]
 
 [node name="BuildableLabel" type="MarginContainer"]
+offset_right = 271.0
+offset_bottom = 34.0
 script = ExtResource("1_algya")
+building_data = ExtResource("2_u7h1e")
 
 [node name="SelectedPanel" type="Panel" parent="."]
 visible = false
@@ -27,3 +32,7 @@ stretch_mode = 4
 layout_mode = 2
 text = "barn"
 target_text = "barn"
+
+[node name="CostLine" parent="." instance=ExtResource("4_4u4ee")]
+layout_mode = 2
+alignment = 2

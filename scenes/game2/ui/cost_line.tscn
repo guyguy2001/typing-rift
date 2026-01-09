@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvabml57v55xi"]
+
+[ext_resource type="PackedScene" uid="uid://ch3bpa1bpo82s" path="res://scenes/game2/ui/item_amount.tscn" id="1_bacdq"]
+[ext_resource type="Script" uid="uid://c7l3eqarq616i" path="res://scenes/game2/ui/cost_line.gd" id="1_lbohx"]
+[ext_resource type="Resource" uid="uid://brahryg57qppe" path="res://resources/items/copper.tres" id="3_gwq5a"]
+[ext_resource type="Resource" uid="uid://db41r2ni7viki" path="res://resources/items/wood.tres" id="4_atqnm"]
+
+[node name="CostLine" type="HBoxContainer"]
+offset_right = 110.0
+offset_bottom = 34.0
+theme_override_constants/separation = 14
+script = ExtResource("1_lbohx")
+
+[node name="ItemAmount" parent="." instance=ExtResource("1_bacdq")]
+layout_mode = 2
+item = ExtResource("3_gwq5a")
+amount = 4
+
+[node name="ItemAmount2" parent="." instance=ExtResource("1_bacdq")]
+layout_mode = 2
+item = ExtResource("4_atqnm")
+amount = 5

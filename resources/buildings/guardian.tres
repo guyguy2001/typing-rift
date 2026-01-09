@@ -1,12 +1,18 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=5 format=3 uid="uid://b7gx5qtkhysje"]
+[gd_resource type="Resource" script_class="BuildingData" load_steps=7 format=3 uid="uid://b7gx5qtkhysje"]
 
 [ext_resource type="Script" uid="uid://bluhduwbwtt1d" path="res://resources/item.gd" id="1_4akjs"]
 [ext_resource type="Script" uid="uid://dwqursnqeops7" path="res://scenes/game2/building_data.gd" id="1_g0hbe"]
 [ext_resource type="Texture2D" uid="uid://bngcqrooqimvi" path="res://assets/Hexagon Pack/PNG/Objects/turret_small.png" id="1_nar1d"]
 [ext_resource type="PackedScene" uid="uid://djhysbhiuon4v" path="res://scenes/tiles/guardian.tscn" id="2_4akjs"]
+[ext_resource type="Resource" uid="uid://brahryg57qppe" path="res://resources/items/copper.tres" id="2_ey02m"]
+[ext_resource type="Resource" uid="uid://db41r2ni7viki" path="res://resources/items/wood.tres" id="3_447e3"]
 
 [resource]
 script = ExtResource("1_g0hbe")
 name = "guardian"
 scene = ExtResource("2_4akjs")
 icon = ExtResource("1_nar1d")
+cost = Dictionary[ExtResource("1_4akjs"), int]({
+ExtResource("2_ey02m"): 4,
+ExtResource("3_447e3"): 5
+})

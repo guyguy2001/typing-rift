@@ -1,14 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dss38r3qiqwod"]
+[gd_scene load_steps=4 format=3 uid="uid://dss38r3qiqwod"]
 
 [ext_resource type="Script" uid="uid://n8yd2v1m8yx8" path="res://scenes/game2/building_list_gui.gd" id="1_frxjf"]
 [ext_resource type="PackedScene" uid="uid://cf5kqka6brca7" path="res://scenes/game2/buildable_label.tscn" id="2_bpisd"]
-[ext_resource type="Resource" uid="uid://dqwe8vcv6rbpv" path="res://resources/buildings/base.tres" id="3_0ymad"]
 [ext_resource type="Resource" uid="uid://b7gx5qtkhysje" path="res://resources/buildings/guardian.tres" id="4_hvs0e"]
 
 [node name="BuildingListGui" type="Panel"]
 offset_left = 996.0
 offset_top = 22.0
-offset_right = 1132.0
+offset_right = 1308.0
 offset_bottom = 171.0
 script = ExtResource("1_frxjf")
 
@@ -26,7 +25,6 @@ grow_vertical = 2
 
 [node name="BuildableLabel2" parent="VBoxContainer" instance=ExtResource("2_bpisd")]
 layout_mode = 2
-building_data = ExtResource("3_0ymad")
 
 [node name="BuildableLabel3" parent="VBoxContainer" instance=ExtResource("2_bpisd")]
 layout_mode = 2

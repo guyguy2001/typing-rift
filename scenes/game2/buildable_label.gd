@@ -13,6 +13,7 @@ var selected: bool = false:
 @onready var selected_panel: Panel = $SelectedPanel
 @onready var icon: TextureRect = $HBoxContainer/Icon
 @onready var label: TypableLabel = $HBoxContainer/TypableLabel
+@onready var cost_line: CostLine = $CostLine
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,3 +22,4 @@ func _ready() -> void:
 	assert(label != null)
 	icon.texture = building_data.icon
 	label.target_text = building_data.name
+	cost_line.update_cost(building_data.cost)
