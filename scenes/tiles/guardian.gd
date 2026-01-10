@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _activate(player: Player) -> void:
 	if player.inventory.item_type == self.needed_item:
-		if player.inventory.try_transfer_to(self.inventory, null):
+		if player.inventory.try_transfer_to(self.inventory, needed_item, null):
 			print("Guardian accepted the", self.needed_item.name)
 		else:
 			print("Failed to transfer item to guardian's inventory")

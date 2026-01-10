@@ -22,11 +22,11 @@ func try_add(item_type_: Item, amount_: int) -> int:
 	return 0
 
 
-func try_transfer_to(target_inventory: Inventory, amount_: Variant) -> bool:
+func try_transfer_to(target_inventory: Inventory, item_type_: Item, amount_: Variant) -> bool:
 	if amount_ == null:
 		amount_ = self.amount
 	assert(amount_ is int)
-	if self.item_type == null or self.amount < amount_:
+	if self.item_type != item_type_ or self.amount < amount_:
 		return false
 	
 	var transfered_amount = target_inventory.try_add(self.item_type, amount_)
