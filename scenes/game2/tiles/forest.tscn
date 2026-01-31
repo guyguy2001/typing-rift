@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cteicldhs2vbs"]
+
+[ext_resource type="Script" uid="uid://2oreekg0p5q8" path="res://scenes/tiles/mine.gd" id="1_5agy5"]
+[ext_resource type="Texture2D" uid="uid://bfvp4jvm7ehwi" path="res://assets/Hexagon Pack/PNG/Tiles/Terrain/Grass/grass_05.png" id="2_i48px"]
+[ext_resource type="Resource" uid="uid://db41r2ni7viki" path="res://resources/items/wood.tres" id="2_pv83r"]
+[ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="3_3d0j7"]
+[ext_resource type="Texture2D" uid="uid://da2ox3ags8dv2" path="res://assets/Hexagon Pack/PNG/Objects/treeRound_large.png" id="3_pv83r"]
+[ext_resource type="Texture2D" uid="uid://bpds11tvqvxe7" path="res://assets/Hexagon Pack/PNG/Objects/treeRound_small.png" id="4_5e5h4"]
+[ext_resource type="Texture2D" uid="uid://ciepq78tr4qsq" path="res://assets/Hexagon Pack/PNG/Objects/treePine_large.png" id="5_dwm5d"]
+[ext_resource type="Texture2D" uid="uid://c4xi6fspttl85" path="res://assets/Hexagon Pack/PNG/Objects/treePine_small.png" id="6_os3ju"]
+
+[node name="Forest" type="Node2D" unique_id=1909634738]
+script = ExtResource("1_5agy5")
+resource = ExtResource("2_pv83r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1174061475]
+texture = ExtResource("2_i48px")
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1361038697]
+position = Vector2(-34, -22)
+texture = ExtResource("3_pv83r")
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=2009685157]
+position = Vector2(35, -16)
+texture = ExtResource("4_5e5h4")
+
+[node name="Sprite2D7" type="Sprite2D" parent="." unique_id=1133783003]
+position = Vector2(-14, 32)
+texture = ExtResource("4_5e5h4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=849112857]
+position = Vector2(-32, 8)
+texture = ExtResource("5_dwm5d")
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=56670794]
+position = Vector2(25, 26)
+texture = ExtResource("5_dwm5d")
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=616432395]
+position = Vector2(-6, -38)
+texture = ExtResource("5_dwm5d")
+
+[node name="Sprite2D9" type="Sprite2D" parent="." unique_id=1040194366]
+position = Vector2(11, -10)
+texture = ExtResource("6_os3ju")
+
+[node name="Sprite2D8" type="Sprite2D" parent="." unique_id=188932467]
+position = Vector2(4, 9)
+texture = ExtResource("4_5e5h4")
+
+[node name="Target" parent="." unique_id=898520236 instance=ExtResource("3_3d0j7")]
+word = "car"

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dqx3t4o2yqij6"]
+
+[ext_resource type="Script" uid="uid://cethbi6mw3a4y" path="res://scenes/inventory2_ui.gd" id="1_7eqkj"]
+[ext_resource type="PackedScene" uid="uid://dvabml57v55xi" path="res://scenes/game2/ui/cost_line.tscn" id="2_rg7u5"]
+
+[node name="Control" type="Control" unique_id=1635423330]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7eqkj")
+
+[node name="CostLine" parent="." unique_id=240528712 instance=ExtResource("2_rg7u5")]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -68.0
+offset_right = 53.0
+offset_bottom = -34.0

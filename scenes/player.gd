@@ -7,7 +7,7 @@ class_name Player
 		# TODO: This should probably be a signal listener?
 		target = value
 		approach_comp.start_chasing(target)
-@export var inventory: Inventory
+@export var inventory: BaseInventory
 
 @onready var approach_comp: ApproachComponent = $ApproachComponent
 @onready var auto_attack_comp: AutoAttackComponent = $AutoAttackComponent

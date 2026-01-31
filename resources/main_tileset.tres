@@ -1,16 +1,18 @@
-[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://cmqohc760li2h"]
+[gd_resource type="TileSet" format=3 uid="uid://cmqohc760li2h"]
 
 [ext_resource type="PackedScene" uid="uid://cvqot8uxq488i" path="res://scenes/tiles/mine.tscn" id="1_u6xvd"]
 [ext_resource type="PackedScene" uid="uid://djhysbhiuon4v" path="res://scenes/tiles/guardian.tscn" id="2_mscir"]
 [ext_resource type="PackedScene" uid="uid://c2wy1rqbjc7gs" path="res://scenes/game2/tiles/build_site.tscn" id="3_4awl1"]
 [ext_resource type="PackedScene" uid="uid://e0d0ppahbywl" path="res://scenes/tiles/base.tscn" id="3_mscir"]
 [ext_resource type="Texture2D" uid="uid://cygyl7qve7ets" path="res://assets/Hexagon Pack/Spritesheets/hexagonAll_sheet.png" id="3_shghf"]
+[ext_resource type="PackedScene" uid="uid://cteicldhs2vbs" path="res://scenes/game2/tiles/forest.tscn" id="5_4awl1"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_272bh"]
 scenes/1/scene = ExtResource("1_u6xvd")
 scenes/2/scene = ExtResource("2_mscir")
 scenes/3/scene = ExtResource("3_4awl1")
 scenes/4/scene = ExtResource("3_mscir")
+scenes/5/scene = ExtResource("5_4awl1")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("3_shghf")

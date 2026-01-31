@@ -1,12 +1,10 @@
-extends Resource
+extends BaseInventory
 
 class_name Inventory
 
 @export var item_type: Item = null
 @export var amount = 0
 @export var capacity: int = -1 # -1 means infinite capacity
-
-signal updated()
 
 func try_add(item_type_: Item, amount_: int) -> int:
 	if capacity != -1 and self.amount + amount_ > capacity:
@@ -22,7 +20,7 @@ func try_add(item_type_: Item, amount_: int) -> int:
 	return 0
 
 
-func try_transfer_to(target_inventory: Inventory, item_type_: Item, amount_: Variant) -> bool:
+func try_transfer_to(target_inventory: BaseInventory, item_type_: Item, amount_: Variant) -> bool:
 	if amount_ == null:
 		amount_ = self.amount
 	assert(amount_ is int)

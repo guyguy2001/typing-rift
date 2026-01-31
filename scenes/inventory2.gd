@@ -1,10 +1,8 @@
-extends Resource
+extends BaseInventory
 
 class_name Inventory2
 
 var items: Dictionary[Item, int]
-
-signal updated()
 
 func try_add(item_type: Item, amount: int) -> int:
 	if item_type not in items:
@@ -13,7 +11,7 @@ func try_add(item_type: Item, amount: int) -> int:
 	return amount
 	
 
-func try_transfer_to(target_inventory: Inventory2, item_type: Item, amount: Variant) -> bool:
+func try_transfer_to(target_inventory: BaseInventory, item_type: Item, amount: Variant) -> bool:
 	assert(amount != null)
 	if amount == null:
 		if item_type not in self.items:

@@ -12,7 +12,7 @@ func _ready() -> void:
 
 func update_cost(new_cost: Dictionary[Item, int]) -> void:
 	cost = new_cost
-	_ready()
+	_redraw()
 
 func _redraw() -> void:
 	for child in get_children():
