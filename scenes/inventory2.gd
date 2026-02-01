@@ -2,12 +2,13 @@ extends BaseInventory
 
 class_name Inventory2
 
-var items: Dictionary[Item, int]
+@export var items: Dictionary[Item, int]
 
 func try_add(item_type: Item, amount: int) -> int:
 	if item_type not in items:
 		items[item_type] = 0
 	items[item_type] += amount
+	self.updated.emit()
 	return amount
 	
 
