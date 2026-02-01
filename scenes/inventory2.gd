@@ -30,3 +30,15 @@ func try_transfer_to(target_inventory: BaseInventory, item_type: Item, amount: V
 		return true
 	
 	return false
+
+
+func try_pay(amonut: Dictionary[Item, int]) -> bool:
+	for item_type in amonut.keys():
+		if item_type not in self.items or self.items[item_type] < amonut[item_type]:
+			return false
+	
+	for item_type in amonut.keys():
+		self.items[item_type] -= amonut[item_type]
+	
+	self.updated.emit()
+	return true
