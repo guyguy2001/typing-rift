@@ -43,3 +43,7 @@ enemy=""
 [gui]
 
 theme/default_theme_scale=1.5
+
+[internationalization]
+
+rendering/root_node_layout_direction=1
