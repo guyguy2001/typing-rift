@@ -1,5 +1,6 @@
 {
-    "editor.detectIndentation": false,
-	"editor.insertSpaces": false,
-	"godotTools.editorPath.godot4": "c:\\Program Files\\Godot\\Godot.exe"
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": false,
+  "godotTools.editorPath.godot4": "c:\\Program Files\\Godot\\Godot.exe",
+  "git.enabled": false
 }

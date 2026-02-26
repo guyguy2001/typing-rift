@@ -2,7 +2,7 @@ extends Control
 
 @export var inventory: Inventory2
 
-@onready var cost_line: CostLine = $CostLine
+@onready var cost_line: CostLine = %CostLine
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

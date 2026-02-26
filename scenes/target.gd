@@ -8,7 +8,7 @@ class_name Target
 		word = value
 		(func(): self.label.target_text = value).call_deferred()
 
-@onready var label : TypableLabel = $TypableLabel
+@onready var label : TypableLabel = %TypableLabel
 @onready var parent: Node2D = get_parent()
 
 signal on_reached(who: Player)

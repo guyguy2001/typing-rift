@@ -9,6 +9,7 @@ var _connected_inventory = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	assert(self.resource != null)
+	target.word = WordsManagerG.get_word()
 	target.on_reached.connect(self._activate)
 
 # TODO: I could just have this entire script be re-used for forest and mine.
@@ -18,8 +19,5 @@ func _on_mined(_word: String) -> void:
 
 func _activate(player: Player) -> void:
 	self._connected_inventory = player.inventory
-	Sidequest.new().basic_setup(
-		[WordsManagerG.get_word(), WordsManagerG.get_word(), WordsManagerG.get_word()],
-		self._on_mined,
-	)
+	Sidequest.new().basic_inf_setup(self._on_mined)
 	

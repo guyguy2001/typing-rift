@@ -1,40 +1,39 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxi762quswxvk"]
+[gd_scene format=3 uid="uid://civkbhim6y82x"]
 
-[ext_resource type="Script" uid="uid://cgeji4co3jb7v" path="res://scenes/health_component.gd" id="1_4ra3w"]
-[ext_resource type="Script" uid="uid://bpvmjc70825yd" path="res://scenes/enemy.gd" id="1_5uy6h"]
-[ext_resource type="Texture2D" uid="uid://br84bxm7nddlo" path="res://assets/Hexagon Base Pack/PNG/alienBlue.png" id="2_5uy6h"]
+[ext_resource type="Script" path="res://scenes/health_component.gd" id="1_4ra3w"]
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_5uy6h"]
 [ext_resource type="PackedScene" uid="uid://dbyu27o8r0nw1" path="res://scenes/gui/healthbar.tscn" id="3_c4w8v"]
+[ext_resource type="Texture2D" uid="uid://cs248ygsn76ce" path="res://assets/Aliens/alienBlue.png" id="3_nenq2"]
 [ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="5_c4w8v"]
 [ext_resource type="Script" uid="uid://bxlklcy24nqfh" path="res://scenes/components/auto_attack.gd" id="6_xwavj"]
 [ext_resource type="Script" uid="uid://g4bac60htvji" path="res://scenes/components/approach.gd" id="7_nenq2"]
 
-[node name="Enemy" type="Node2D" groups=["enemy"]]
+[node name="Enemy" type="Node2D" unique_id=1843593371 groups=["enemy"]]
 script = ExtResource("1_5uy6h")
 
-[node name="HealthComponent" type="Node2D" parent="."]
+[node name="HealthComponent" type="Node2D" parent="." unique_id=1340030380]
 script = ExtResource("1_4ra3w")
 max_health = 50.0
 health = 50.0
-metadata/_custom_type_script = "uid://cgeji4co3jb7v"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_5uy6h")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=798195538]
+texture = ExtResource("3_nenq2")
 
-[node name="Healthabr" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("3_c4w8v")]
+[node name="Healthabr" parent="." unique_id=1432172835 node_paths=PackedStringArray("health_component") instance=ExtResource("3_c4w8v")]
 offset_left = -27.0
 offset_top = -61.0
 offset_right = 27.0
 offset_bottom = -51.0
 health_component = NodePath("../HealthComponent")
 
-[node name="Target" parent="." instance=ExtResource("5_c4w8v")]
+[node name="Target" parent="." unique_id=1738415346 instance=ExtResource("5_c4w8v")]
 word = "enemy"
 
-[node name="AutoAttackComponent" type="Timer" parent="."]
+[node name="AutoAttackComponent" type="Timer" parent="." unique_id=2136734581]
 script = ExtResource("6_xwavj")
 metadata/_custom_type_script = "uid://bxlklcy24nqfh"
 
-[node name="ApproachComponent" type="Node" parent="."]
+[node name="ApproachComponent" type="Node" parent="." unique_id=1788152337]
 script = ExtResource("7_nenq2")
 speed = 100.0
 metadata/_custom_type_script = "uid://g4bac60htvji"

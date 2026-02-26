@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://df521ffn10g7w"]
+[gd_scene format=3 uid="uid://df521ffn10g7w"]
 
 [ext_resource type="Script" uid="uid://cyw4qsgjwxhe4" path="res://typing_lib/typable_label.gd" id="1"]
 
-[node name="TypableLabel" type="RichTextLabel"]
+[node name="TypableLabel" type="RichTextLabel" unique_id=1987360825]
 custom_minimum_size = Vector2(0, 20)
 offset_right = 193.0
 offset_bottom = 23.0
@@ -11,4 +11,5 @@ size_flags_vertical = 4
 bbcode_enabled = true
 text = "TypableLabel"
 fit_content = true
+autowrap_mode = 0
 script = ExtResource("1")

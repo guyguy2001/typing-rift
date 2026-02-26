@@ -1,23 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://dx2bq1hkjp2c2"]
+[gd_scene format=3 uid="uid://dx2bq1hkjp2c2"]
 
 [ext_resource type="Script" uid="uid://b0jk4g7hjmmfy" path="res://scenes/target.gd" id="1_b5a2r"]
 [ext_resource type="PackedScene" uid="uid://df521ffn10g7w" path="res://typing_lib/typable_label.tscn" id="2_nlbrr"]
 
-[node name="Target" type="Node2D"]
+[node name="Target" type="Node2D" unique_id=781768564]
 script = ExtResource("1_b5a2r")
 
-[node name="TypableLabel" parent="." instance=ExtResource("2_nlbrr")]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1538038978]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -150.0
-offset_top = -69.0
-offset_right = 150.0
-offset_bottom = -46.0
+offset_left = -20.0
+offset_top = -82.0
+offset_right = 20.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 0
-pivot_offset = Vector2(150, 23)
-text = "foo"
+size_flags_horizontal = 3
+
+[node name="TypableLabel" parent="PanelContainer" unique_id=764828214 instance=ExtResource("2_nlbrr")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "foo123"
+autowrap_mode = 0
 horizontal_alignment = 1
