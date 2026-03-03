@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dqx3t4o2yqij6" path="res://scenes/inventory2_ui.tscn" id="4_u5tar"]
 [ext_resource type="PackedScene" uid="uid://dkn8qucpyi1xk" path="res://typing_lib/input_feedback_bar.tscn" id="6_i3xn2"]
 [ext_resource type="PackedScene" uid="uid://dss38r3qiqwod" path="res://scenes/game2/building_list_gui.tscn" id="7_0jy3h"]
-[ext_resource type="Script" uid="uid://thu73l027jrk" path="res://scenes/sidequest/sidequest_gui.gd" id="7_icotl"]
+[ext_resource type="PackedScene" uid="uid://deu726qowrw3r" path="res://scenes/sidequest/sidequest_gui.tscn" id="7_u5tar"]
 [ext_resource type="PackedScene" uid="uid://civkbhim6y82x" path="res://scenes/enemy.tscn" id="8_u5tar"]
 
 [node name="Game2" type="Node2D" unique_id=1962786476]
@@ -21,7 +21,7 @@ tile_set = ExtResource("1_u5tar")
 
 [node name="Items" type="TileMapLayer" parent="Node2D" unique_id=1822238894]
 position = Vector2(-14, 20)
-tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAABAADAAQAAAAAAAAAAQADAP7/AAAAAAAABQAJAAMAAAAAAAAABQA=")
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAABAADAAQAAAAAAAAAAQADAP7/AAAAAAAABQAJAAMAAAAAAAAABQAHAAIAAAAAAAAAAgA=")
 tile_set = ExtResource("1_u5tar")
 
 [node name="Player" parent="." unique_id=1156714101 instance=ExtResource("2_jqwjr")]
@@ -62,31 +62,7 @@ offset_right = -10.0
 offset_bottom = 240.0
 grow_horizontal = 0
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=645690294]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -146.0
-offset_top = -160.0
-offset_right = -10.0
-offset_bottom = -11.0
-grow_horizontal = 0
-grow_vertical = 0
-script = ExtResource("7_icotl")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=530812150]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 5.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="SidequestGui" parent="CanvasLayer" unique_id=432298445 instance=ExtResource("7_u5tar")]
 
 [node name="Enemy" parent="." unique_id=1843593371 instance=ExtResource("8_u5tar")]
 position = Vector2(1860, 533)

@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://deu726qowrw3r"]
+
+[ext_resource type="Script" uid="uid://thu73l027jrk" path="res://scenes/sidequest/sidequest_gui.gd" id="1_rrd4t"]
+[ext_resource type="Script" uid="uid://w0hcu1bhe1as" path="res://scenes/sidequest/sidequest.gd" id="2_xf8j6"]
+[ext_resource type="PackedScene" uid="uid://df521ffn10g7w" path="res://typing_lib/typable_label.tscn" id="3_lvi60"]
+
+[sub_resource type="Resource" id="Resource_lvi60"]
+script = ExtResource("2_xf8j6")
+original_items = Array[String](["foo", "bar", "baz", "1", "2", "3"])
+metadata/_custom_type_script = "uid://w0hcu1bhe1as"
+
+[node name="SidequestGui" type="Panel" unique_id=1075842886]
+clip_contents = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -160.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_rrd4t")
+sidequest = SubResource("Resource_lvi60")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1992189592]
+clip_contents = true
+layout_mode = 0
+offset_left = 5.0
+offset_right = 136.0
+offset_bottom = 194.0
+
+[node name="TypableLabel5" parent="VBoxContainer" unique_id=1987360825 instance=ExtResource("3_lvi60")]
+layout_mode = 2
+text = "foo"
+target_text = "foo"
+
+[node name="TypableLabel6" parent="VBoxContainer" unique_id=882671844 instance=ExtResource("3_lvi60")]
+layout_mode = 2
+text = "foo"
+target_text = "foo"
+
+[node name="TypableLabel7" parent="VBoxContainer" unique_id=269301764 instance=ExtResource("3_lvi60")]
+layout_mode = 2
+text = "foo"
+target_text = "foo"
+
+[node name="TypableLabel8" parent="VBoxContainer" unique_id=1864403390 instance=ExtResource("3_lvi60")]
+layout_mode = 2
+text = "foo"
+target_text = "foo"
+
+[node name="TypableLabel9" parent="VBoxContainer" unique_id=1648809294 instance=ExtResource("3_lvi60")]
+layout_mode = 2
+text = "foo"
+target_text = "foo"

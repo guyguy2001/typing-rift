@@ -8,6 +8,10 @@ const TypableLabelScene = preload("res://typing_lib/typable_label.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Clean placeholders
+	self.sidequest = null
+	self._setup_items()
+
 	SidequestManager.focus_changed.connect(self._on_focus_changed)
 
 func _on_focus_changed(sidequest_: Sidequest) -> void:
