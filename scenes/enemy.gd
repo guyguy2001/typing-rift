@@ -18,6 +18,7 @@ var target: Node2D = null:
 
 @onready var auto_attack_comp: AutoAttackComponent = $AutoAttackComponent
 @onready var approach_comp: ApproachComponent = $ApproachComponent
+@onready var health_comp: HealthComponent = $HealthComponent
 
 
 const TARGET_GROUP = "attackable"
@@ -25,7 +26,10 @@ const TARGET_GROUP = "attackable"
 func _ready() -> void:
 	assert(auto_attack_comp != null)
 	assert(approach_comp != null)
+	assert(health_comp != null)
+
 	self.approach_comp.reached_target.connect(self._on_reached_target)
+	self.health_comp.died.connect(self.queue_free)
 
 func _find_closest_target() -> Node2D:
 	var closest_target: Node2D = null

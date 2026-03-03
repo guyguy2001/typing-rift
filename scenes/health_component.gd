@@ -15,5 +15,10 @@ class_name HealthComponent
 signal max_health_changed(new_max_health: float)
 signal health_changed(new_health: float)
 
+signal died()
+
 func damage(amount: float) -> void:
 	health -= amount
+	if health <= 0.0:
+		health = 0
+		self.died.emit()
