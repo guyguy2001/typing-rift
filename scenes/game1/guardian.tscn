@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ux4xth1cgnub"]
+
+[ext_resource type="Texture2D" uid="uid://cygyl7qve7ets" path="res://assets/Hexagon Pack/Spritesheets/hexagonAll_sheet.png" id="1_6nlrj"]
+[ext_resource type="Script" uid="uid://l34uroqqfftf" path="res://scenes/game1/guardian.gd" id="2_3xwax"]
+[ext_resource type="Script" uid="uid://c3e1c4f4nmgi7" path="res://scenes/inventory.gd" id="3_nxktm"]
+[ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="5_gpfop"]
+[ext_resource type="PackedScene" uid="uid://dp7xul80idw6f" path="res://scenes/inventory_ui.tscn" id="6_843fn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxqpd"]
+atlas = ExtResource("1_6nlrj")
+region = Rect2(732, 1562, 120, 140)
+
+[sub_resource type="Resource" id="Resource_24oye"]
+script = ExtResource("3_nxktm")
+capacity = 5
+metadata/_custom_type_script = "uid://c3e1c4f4nmgi7"
+
+[node name="Guardian" type="Sprite2D" unique_id=1658915893]
+texture = SubResource("AtlasTexture_pxqpd")
+script = ExtResource("2_3xwax")
+
+[node name="Target" parent="." unique_id=714563168 instance=ExtResource("5_gpfop")]
+word = "guardian"
+
+[node name="InventoryUI" parent="." unique_id=2037679579 instance=ExtResource("6_843fn")]
+inventory = SubResource("Resource_24oye")

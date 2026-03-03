@@ -21,7 +21,6 @@ func _ready() -> void:
 func _on_reached_target(_who: Node2D, target_: Target) -> void:
 	self.target = null
 	target_.on_reached.emit(self) # ????
-	print("oofoidjfi")
 	if target_.parent.is_in_group("enemy"):
 		print("Player reached enemy target, starting auto-attack")
 		self.auto_attack_comp.target = target_.parent

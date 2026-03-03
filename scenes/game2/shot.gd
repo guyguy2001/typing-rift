@@ -3,7 +3,7 @@ extends Node2D
 
 @export var source: Node2D
 @export var dest: Node2D
-@export var total_time: float = 2.0
+@export var total_time: float = 0.5
 
 @export var opacity: float = 1.0
 
