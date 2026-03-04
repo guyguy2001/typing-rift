@@ -47,7 +47,7 @@ tile_set = ExtResource("1_u5tar")
 
 [node name="Items" type="TileMapLayer" parent="Node2D" unique_id=1822238894]
 position = Vector2(-14, 20)
-tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAABAADAAQAAAAAAAAAAQADAP7/AAAAAAAABQAJAAMAAAAAAAAABQAGAAQAAAAAAAAAAwD//wQAAAAAAAAAAwAGAP//AAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAABAADAAQAAAAAAAAAAQADAP7/AAAAAAAABQD//wQAAAAAAAAAAwD///7/AAAAAAAAAwAGAP//AAAAAAAAAwAGAAMAAAAAAAAAAwA=")
 tile_set = ExtResource("1_u5tar")
 
 [node name="Player" parent="." unique_id=1156714101 instance=ExtResource("2_jqwjr")]
