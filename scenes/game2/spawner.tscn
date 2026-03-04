@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://t404dvsxbvgh"]
+
+[ext_resource type="Script" uid="uid://dyuhl2heuw2hb" path="res://scenes/game2/spawner.gd" id="1_1g4kg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g4kg"]
+bg_color = Color(0.89411765, 0.45490196, 0.09019608, 0.6)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[node name="Spawner" type="Control" unique_id=118835040]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_1g4kg")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1852162608]
+unique_name_in_owner = true
+
+[node name="Control" type="Control" parent="." unique_id=2076893684]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control" unique_id=1586842213]
+layout_mode = 0
+offset_right = 94.0
+offset_bottom = 63.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1g4kg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer" unique_id=1599531211]
+layout_mode = 2
+
+[node name="TimerLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=1518483098]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5.0"
+horizontal_alignment = 1
+
+[node name="EnemyCountLabel" type="Label" parent="Control/PanelContainer/VBoxContainer" unique_id=1793827240]
+unique_name_in_owner = true
+layout_mode = 2
+text = "x3"
+horizontal_alignment = 1

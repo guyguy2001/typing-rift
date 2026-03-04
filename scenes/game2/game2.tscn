@@ -7,10 +7,33 @@
 [ext_resource type="PackedScene" uid="uid://dkn8qucpyi1xk" path="res://typing_lib/input_feedback_bar.tscn" id="6_i3xn2"]
 [ext_resource type="PackedScene" uid="uid://dss38r3qiqwod" path="res://scenes/game2/building_list_gui.tscn" id="7_0jy3h"]
 [ext_resource type="PackedScene" uid="uid://deu726qowrw3r" path="res://scenes/sidequest/sidequest_gui.tscn" id="7_u5tar"]
+[ext_resource type="PackedScene" uid="uid://t404dvsxbvgh" path="res://scenes/game2/spawner.tscn" id="8_prof6"]
 [ext_resource type="PackedScene" uid="uid://civkbhim6y82x" path="res://scenes/enemy.tscn" id="8_u5tar"]
 [ext_resource type="Script" uid="uid://dk32t63iecppr" path="res://scenes/singletons/debug_cheats.gd" id="9_t6l4y"]
 [ext_resource type="Resource" uid="uid://db41r2ni7viki" path="res://resources/items/wood.tres" id="10_prof6"]
 [ext_resource type="Resource" uid="uid://brahryg57qppe" path="res://resources/items/copper.tres" id="11_i3xn2"]
+[ext_resource type="Script" uid="uid://brnryghrbtk6j" path="res://resources/spawn_order.gd" id="13_i3xn2"]
+[ext_resource type="Script" uid="uid://c08aab6vuup23" path="res://resources/wave.gd" id="14_icotl"]
+
+[sub_resource type="Resource" id="Resource_8v1ax"]
+script = ExtResource("14_icotl")
+time_until = 5.0
+spawns = Dictionary[PackedScene, int]({
+ExtResource("8_u5tar"): 1
+})
+
+[sub_resource type="Resource" id="Resource_r03qw"]
+script = ExtResource("14_icotl")
+time_until = 5.0
+spawns = Dictionary[PackedScene, int]({
+ExtResource("8_u5tar"): 3
+})
+
+[sub_resource type="Resource" id="Resource_icotl"]
+script = ExtResource("13_i3xn2")
+enemy_scene = ExtResource("8_u5tar")
+waves = Array[ExtResource("14_icotl")]([SubResource("Resource_8v1ax"), SubResource("Resource_r03qw")])
+metadata/_custom_type_script = "uid://brnryghrbtk6j"
 
 [node name="Game2" type="Node2D" unique_id=1962786476]
 
@@ -67,10 +90,18 @@ grow_horizontal = 0
 
 [node name="SidequestGui" parent="CanvasLayer" unique_id=432298445 instance=ExtResource("7_u5tar")]
 
-[node name="Enemy" parent="." unique_id=1843593371 instance=ExtResource("8_u5tar")]
-position = Vector2(1860, 533)
-
 [node name="Cheats" type="Node" parent="." unique_id=1279471357 node_paths=PackedStringArray("player")]
 script = ExtResource("9_t6l4y")
 player = NodePath("../Player")
 resources = Array[Resource]([ExtResource("10_prof6"), ExtResource("11_i3xn2")])
+
+[node name="SpawnPoint" type="Node2D" parent="." unique_id=796133392]
+position = Vector2(1744, 514)
+
+[node name="Spawner" parent="SpawnPoint" unique_id=215469802 node_paths=PackedStringArray("spawn_point") instance=ExtResource("8_prof6")]
+offset_left = -46.0
+offset_top = -123.0
+offset_right = -46.0
+offset_bottom = -123.0
+spawn_point = NodePath("..")
+spawn_order = SubResource("Resource_icotl")
