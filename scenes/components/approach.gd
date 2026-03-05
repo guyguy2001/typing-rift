@@ -3,10 +3,12 @@ extends Node
 class_name ApproachComponent
 
 @export var close_threshold: float = 50
-@export var speed: float = 500
+@export var normal_speed: float = 500
+@export var dash_speed: float = 1000
 
 var target: Node2D = null
 var active: bool = false
+var dashing: bool = false
 
 @onready var parent: Node2D = get_parent()
 
@@ -20,6 +22,7 @@ func _process(delta: float) -> void:
 			# target = null  # TODO?
 			active = false
 		else:
+			var speed = dash_speed if dashing else normal_speed
 			self.parent.position += distance.normalized() * delta * speed
 
 func start_chasing(new_target: Node2D) -> void:

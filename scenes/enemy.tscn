@@ -35,5 +35,6 @@ metadata/_custom_type_script = "uid://bxlklcy24nqfh"
 
 [node name="ApproachComponent" type="Node" parent="." unique_id=1788152337]
 script = ExtResource("7_nenq2")
-speed = 100.0
+normal_speed = 100.0
+dash_speed = 100.0
 metadata/_custom_type_script = "uid://g4bac60htvji"

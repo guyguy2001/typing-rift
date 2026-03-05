@@ -1,21 +1,38 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbbv6hrdap1g2"]
+[gd_scene format=3 uid="uid://dbbv6hrdap1g2"]
 
 [ext_resource type="Texture2D" uid="uid://bptx2opg8nea7" path="res://assets/Alien Spaceship Pack/PNG/shipPink_manned.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://y407b6wthejp" path="res://scenes/player.gd" id="1_qhqgy"]
 [ext_resource type="Script" uid="uid://bxlklcy24nqfh" path="res://scenes/components/auto_attack.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://g4bac60htvji" path="res://scenes/components/approach.gd" id="4_dqkch"]
+[ext_resource type="PackedScene" uid="uid://df521ffn10g7w" path="res://typing_lib/typable_label.tscn" id="5_qlg0r"]
 
-[node name="Player" type="Node2D" groups=["player"]]
+[node name="Player" type="Node2D" unique_id=61268919 groups=["player"]]
 script = ExtResource("1_qhqgy")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=519081680]
 position = Vector2(0, -46)
 texture = ExtResource("1_3vyb7")
 
-[node name="AutoAttackComponent" type="Timer" parent="."]
+[node name="AutoAttackComponent" type="Timer" parent="." unique_id=1738801244]
 script = ExtResource("3_qhqgy")
 metadata/_custom_type_script = "uid://bxlklcy24nqfh"
 
-[node name="ApproachComponent" type="Node" parent="."]
+[node name="ApproachComponent" type="Node" parent="." unique_id=493287222]
 script = ExtResource("4_dqkch")
 metadata/_custom_type_script = "uid://g4bac60htvji"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=444220302]
+offset_left = -45.0
+offset_top = 33.0
+offset_right = 138.0
+offset_bottom = 73.0
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1182142116]
+layout_mode = 2
+text = "👟"
+
+[node name="DashInput" parent="HBoxContainer" unique_id=1987360825 instance=ExtResource("5_qlg0r")]
+unique_name_in_owner = true
+layout_mode = 2
+text = "dash"
+target_text = "dash"
