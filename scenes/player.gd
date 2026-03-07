@@ -21,7 +21,7 @@ func _ready() -> void:
 	InputBufferG.input_changed.connect(self._on_word_typed)
 
 func _on_reached_target(_who: Node2D, target_: Target) -> void:
-	self.target = null
+	# self.target = null   # TODO: I want to have the approach component remember who it arrived at
 	target_.on_reached.emit(self) # ????
 	if target_.parent.is_in_group("enemy"):
 		print("Player reached enemy target, starting auto-attack")
