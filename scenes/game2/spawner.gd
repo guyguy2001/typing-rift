@@ -1,7 +1,6 @@
 extends Node
 
-# This manages spawning enemies based on spawn_order
-# The spawner.tscn scene should contain Timer nodes that trigger spawns
+const SPAWN_RADIUS = 100
 
 @export var spawn_point: Node2D
 @export var spawn_order: SpawnOrder
@@ -35,7 +34,13 @@ func _spawn_wave() -> void:
 
 func _spawn_enemy() -> void:
 	var enemy = spawn_order.enemy_scene.instantiate()
-	enemy.global_position = spawn_point.global_position
+	enemy.global_position = (
+		spawn_point.global_position +
+		Vector2(
+			randf_range(-SPAWN_RADIUS, SPAWN_RADIUS),
+			randf_range(-SPAWN_RADIUS, SPAWN_RADIUS),
+		)
+	)
 	get_tree().root.add_child(enemy)
 
 
