@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dss38r3qiqwod"]
+[gd_scene format=3 uid="uid://dss38r3qiqwod"]
 
 [ext_resource type="Script" uid="uid://n8yd2v1m8yx8" path="res://scenes/game2/building_list_gui.gd" id="1_frxjf"]
 [ext_resource type="PackedScene" uid="uid://cf5kqka6brca7" path="res://scenes/game2/buildable_label.tscn" id="2_bpisd"]
 [ext_resource type="Resource" uid="uid://b7gx5qtkhysje" path="res://resources/buildings/guardian.tres" id="4_hvs0e"]
 
-[node name="BuildingListGui" type="Panel"]
+[node name="BuildingListGui" type="Panel" unique_id=713589902]
 offset_left = 996.0
 offset_top = 22.0
 offset_right = 1308.0
 offset_bottom = 171.0
 script = ExtResource("1_frxjf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=367049606]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -23,9 +23,9 @@ offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BuildableLabel2" parent="VBoxContainer" instance=ExtResource("2_bpisd")]
+[node name="BuildableLabel2" parent="VBoxContainer" unique_id=1873460624 instance=ExtResource("2_bpisd")]
 layout_mode = 2
 
-[node name="BuildableLabel3" parent="VBoxContainer" instance=ExtResource("2_bpisd")]
+[node name="BuildableLabel3" parent="VBoxContainer" unique_id=1347898682 instance=ExtResource("2_bpisd")]
 layout_mode = 2
 building_data = ExtResource("4_hvs0e")

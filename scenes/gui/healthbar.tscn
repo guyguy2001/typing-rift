@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbyu27o8r0nw1"]
+[gd_scene format=3 uid="uid://dbyu27o8r0nw1"]
 
 [ext_resource type="Script" uid="uid://5ph3hkuv1dts" path="res://scenes/gui/healthbar.gd" id="1_wxvnk"]
 
-[node name="Healthabr" type="ProgressBar"]
+[node name="Healthabr" type="ProgressBar" unique_id=2090464340]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

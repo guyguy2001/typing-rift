@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf5kqka6brca7"]
+[gd_scene format=3 uid="uid://cf5kqka6brca7"]
 
 [ext_resource type="Script" uid="uid://cj52a61aps5f5" path="res://scenes/game2/buildable_label.gd" id="1_algya"]
 [ext_resource type="Texture2D" uid="uid://buc1231m8raor" path="res://assets/Hexagon Pack/PNG/Objects/farm.png" id="1_ftqir"]
@@ -6,21 +6,21 @@
 [ext_resource type="Resource" uid="uid://dqwe8vcv6rbpv" path="res://resources/buildings/base.tres" id="2_u7h1e"]
 [ext_resource type="PackedScene" uid="uid://dvabml57v55xi" path="res://scenes/game2/ui/cost_line.tscn" id="4_4u4ee"]
 
-[node name="BuildableLabel" type="MarginContainer"]
+[node name="BuildableLabel" type="MarginContainer" unique_id=1931165398]
 offset_right = 271.0
 offset_bottom = 34.0
 script = ExtResource("1_algya")
 building_data = ExtResource("2_u7h1e")
 
-[node name="SelectedPanel" type="Panel" parent="."]
+[node name="SelectedPanel" type="Panel" parent="." unique_id=700938806]
 visible = false
 z_index = -1
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2141799759]
 layout_mode = 2
 
-[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+[node name="Icon" type="TextureRect" parent="HBoxContainer" unique_id=1949864911]
 custom_minimum_size = Vector2(16, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -28,11 +28,11 @@ texture = ExtResource("1_ftqir")
 expand_mode = 5
 stretch_mode = 4
 
-[node name="TypableLabel" parent="HBoxContainer" instance=ExtResource("2_algya")]
+[node name="TypableLabel" parent="HBoxContainer" unique_id=1293854323 instance=ExtResource("2_algya")]
 layout_mode = 2
 text = "barn"
 target_text = "barn"
 
-[node name="CostLine" parent="." instance=ExtResource("4_4u4ee")]
+[node name="CostLine" parent="." unique_id=2061433360 instance=ExtResource("4_4u4ee")]
 layout_mode = 2
 alignment = 2

@@ -1,8 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkn8qucpyi1xk"]
+[gd_scene format=3 uid="uid://dkn8qucpyi1xk"]
 
 [ext_resource type="Script" uid="uid://th0kthl8ntr6" path="res://typing_lib/input_feedback_bar.gd" id="1"]
 
-[node name="InputFeedbackBar" type="Label"]
+[node name="InputFeedbackBar" type="Label" unique_id=704247997]
 custom_minimum_size = Vector2(200, 30)
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 1, 1, 1)

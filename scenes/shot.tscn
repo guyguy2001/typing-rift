@@ -2,7 +2,5 @@
 
 [ext_resource type="Script" uid="uid://saidv6sts6gy" path="res://scenes/game2/shot.gd" id="1_ta7u2"]
 
-[node name="Shot" type="Node2D" unique_id=1877014909 node_paths=PackedStringArray("source", "dest")]
+[node name="Shot" type="Node2D" unique_id=1877014909]
 script = ExtResource("1_ta7u2")
-source = NodePath("")
-dest = NodePath("")

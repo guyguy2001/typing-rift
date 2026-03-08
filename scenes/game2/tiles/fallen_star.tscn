@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b6fykn181rkw0"]
+
+[ext_resource type="Script" uid="uid://2oreekg0p5q8" path="res://scenes/tiles/mine.gd" id="1_1punf"]
+[ext_resource type="Resource" uid="uid://db41r2ni7viki" path="res://resources/items/wood.tres" id="2_50sca"]
+[ext_resource type="PackedScene" uid="uid://dx2bq1hkjp2c2" path="res://scenes/target.tscn" id="8_g34af"]
+
+[node name="FallenStar" type="Node2D" unique_id=1909634738]
+script = ExtResource("1_1punf")
+resource = ExtResource("2_50sca")
+
+[node name="Target" parent="." unique_id=898520236 instance=ExtResource("8_g34af")]
+word = "car"

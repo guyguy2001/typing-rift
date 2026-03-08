@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkmidv35v3qpt"]
+[gd_scene format=3 uid="uid://bkmidv35v3qpt"]
 
 [ext_resource type="Script" uid="uid://qnmi161jolfi" path="res://scenes/singletons/words_manager.gd" id="1_t5st1"]
 
-[node name="WordsManager" type="Node"]
+[node name="WordsManager" type="Node" unique_id=1767191933]
 script = ExtResource("1_t5st1")

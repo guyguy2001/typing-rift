@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="BuildingData" load_steps=6 format=3 uid="uid://dqwe8vcv6rbpv"]
+[gd_resource type="Resource" script_class="BuildingData" format=3 uid="uid://dqwe8vcv6rbpv"]
 
 [ext_resource type="Script" uid="uid://bluhduwbwtt1d" path="res://resources/item.gd" id="1_hlfqm"]
 [ext_resource type="Texture2D" uid="uid://baldopfjxeifw" path="res://assets/Hexagon Pack/PNG/Objects/oldBuilding.png" id="1_ofiml"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cfemeilrxja36"]
+[gd_scene format=4 uid="uid://cfemeilrxja36"]
 
 [ext_resource type="TileSet" uid="uid://cmqohc760li2h" path="res://resources/main_tileset.tres" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://dbbv6hrdap1g2" path="res://scenes/player.tscn" id="2_h2yge"]
@@ -7,45 +7,45 @@
 [ext_resource type="PackedScene" uid="uid://dkn8qucpyi1xk" path="res://typing_lib/input_feedback_bar.tscn" id="5_7mycd"]
 [ext_resource type="Script" uid="uid://thu73l027jrk" path="res://scenes/sidequest/sidequest_gui.gd" id="5_272bh"]
 [ext_resource type="Resource" uid="uid://dk5alvthpib7m" path="res://resources/player_inventory.tres" id="8_5vw27"]
-[ext_resource type="PackedScene" path="res://scenes/enemy.tscn" id="8_kek77"]
+[ext_resource type="PackedScene" uid="uid://civkbhim6y82x" path="res://scenes/enemy.tscn" id="8_kek77"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=2025409734]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=1886876234]
 position = Vector2(492, 358)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="Node2D"]
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=145882099]
 position = Vector2(-14, 20)
 tile_map_data = PackedByteArray("AAD/////BwAGAAUAAAAAAP//BwAGAAUAAAAAAP7/BwAGAAUAAAD///7/BwAGAAUAAAD+////BwAGAAAAAAD//wAAAAAAAAAABAAAAAAABwAGAAUAAAD///3/BwAGAAUAAAD+//7/BwAGAAUAAAD9////BwAGAAUAAAAAAP3/BwAGAAUAAAD+/wAABwAGAAUAAAD//wEABwAGAAUAAAD9/wAABwAGAAUAAAABAP7/AAAAAAAAAQD8/wEABwAGAAUAAAABAAEABwAGAAAAAAD8/wIABwAGAAUAAAD9/wIABwAGAAUAAAD+/wIABwAGAAUAAAD//wIABwAGAAUAAAAAAAIABwAGAAUAAAABAAIABwAGAAUAAAACAAIABwAGAAUAAAADAAIABwAGAAUAAAAEAAIABwAGAAUAAAAFAAIABwAGAAUAAAAEAAEABwAGAAUAAAAFAAAABwAGAAUAAAAEAP//BwAGAAUAAAAFAP7/BwAGAAUAAAAEAP3/BwAGAAUAAAAFAPz/BwAGAAUAAAAEAPz/BwAGAAUAAAADAPz/BwAGAAUAAAACAPz/BwAGAAUAAAABAPz/BwAGAAUAAAAAAPz/BwAGAAUAAAD///z/BwAGAAUAAAD+//z/BwAGAAUAAAD9//z/BwAGAAUAAAD8//z/BwAGAAUAAAD7//3/BwAGAAUAAAD8//7/BwAGAAUAAAD7//7/BwAGAAUAAAD7////BwAGAAUAAAD7/wAABwAGAAUAAAD7/wEABwAGAAUAAAD8/wAABwAGAAUAAAD8////BwAGAAUAAAD9//7/BwAGAAUAAAD8//3/BwAKAAkAAAD9//3/BwAGAAAAAAD+//3/BwAGAAUAAAD9/wEABwAGAAAAAAD7/wIABwAGAAUAAAD+/wEABwAGAAUAAAAAAAEABwAGAAUAAAACAAEABwAGAAUAAAADAAEABwAGAAUAAAAEAAAABwAGAAAAAAAEAP7/BwAGAAAAAAACAP3/BwAGAAUAAAACAP7/BwAGAAUAAAABAP//BwAGAAUAAAACAAAABwAGAAUAAAADAAAABwAGAAUAAAADAP//AAAAAAAAAgADAP7/BwAGAAUAAAABAAAABwAGAAUAAAACAP//BwAGAAUAAAABAP3/BwAGAAUAAAAFAP3/BwAGAAUAAAAFAAEABwAGAAUAAAAFAP//BwAGAAUAAAD7//z/BwAGAAUAAAADAP3/BwAFAA0AAAA=")
 tile_set = ExtResource("1_272bh")
 
-[node name="Player" parent="." instance=ExtResource("2_h2yge")]
+[node name="Player" parent="." unique_id=2005194647 instance=ExtResource("2_h2yge")]
 position = Vector2(87, 453)
 inventory = ExtResource("8_5vw27")
 
-[node name="InventoryUI" parent="Player" instance=ExtResource("5_5vw27")]
+[node name="InventoryUI" parent="Player" unique_id=1949599018 instance=ExtResource("5_5vw27")]
 inventory = ExtResource("8_5vw27")
 
-[node name="Target2" parent="." instance=ExtResource("3_h2yge")]
+[node name="Target2" parent="." unique_id=349153241 instance=ExtResource("3_h2yge")]
 position = Vector2(127, 116)
 word = "baz"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=313264179]
 
-[node name="InputFeedbackBar" parent="CanvasLayer" instance=ExtResource("5_7mycd")]
+[node name="InputFeedbackBar" parent="CanvasLayer" unique_id=321101689 instance=ExtResource("5_7mycd")]
 offset_left = 435.0
 offset_top = 573.0
 offset_right = 635.0
 offset_bottom = 603.0
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=503637436]
 offset_left = 996.0
 offset_top = 484.0
 offset_right = 1132.0
 offset_bottom = 633.0
 script = ExtResource("5_272bh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel" unique_id=1918622074]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -57,5 +57,5 @@ offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Enemy" parent="." instance=ExtResource("8_kek77")]
+[node name="Enemy" parent="." unique_id=1029551766 instance=ExtResource("8_kek77")]
 position = Vector2(637, 433)
