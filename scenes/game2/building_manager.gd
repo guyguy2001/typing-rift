@@ -13,6 +13,7 @@ signal building_selected(index: int, building_data: BuildingData)
 signal building_deselected()
 
 func _ready() -> void:
+	# TODO: This is the only line preventing me from making this into a resource, as I think it should be?
 	InputBufferG.word_submitted.connect(self._on_word_entered)
 
 func _on_word_entered(typed_word: String) -> void:

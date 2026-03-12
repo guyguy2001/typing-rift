@@ -1,0 +1,80 @@
+[gd_scene format=4 uid="uid://c8fcl02mj5cy2"]
+
+[ext_resource type="TileSet" uid="uid://cmqohc760li2h" path="res://resources/main_tileset.tres" id="1_y3jp3"]
+[ext_resource type="PackedScene" uid="uid://dbbv6hrdap1g2" path="res://scenes/player.tscn" id="2_x61i4"]
+[ext_resource type="Resource" uid="uid://c66kmfwchye14" path="res://resources/player_inventory2.tres" id="3_7hjhr"]
+[ext_resource type="PackedScene" uid="uid://dqx3t4o2yqij6" path="res://scenes/inventory2_ui.tscn" id="4_81dqw"]
+[ext_resource type="PackedScene" uid="uid://uu2dm22ghxi7" path="res://scenes/game2/screen_gui.tscn" id="5_mjbgu"]
+[ext_resource type="Script" uid="uid://dk32t63iecppr" path="res://scenes/singletons/debug_cheats.gd" id="6_saj2p"]
+[ext_resource type="Resource" uid="uid://db41r2ni7viki" path="res://resources/items/wood.tres" id="7_30gl7"]
+[ext_resource type="Resource" uid="uid://brahryg57qppe" path="res://resources/items/copper.tres" id="8_iya21"]
+[ext_resource type="PackedScene" uid="uid://t404dvsxbvgh" path="res://scenes/game2/spawner.tscn" id="9_seakg"]
+[ext_resource type="PackedScene" uid="uid://civkbhim6y82x" path="res://scenes/enemy.tscn" id="10_srtdl"]
+[ext_resource type="Script" uid="uid://brnryghrbtk6j" path="res://resources/spawn_order.gd" id="11_mfu61"]
+[ext_resource type="Script" uid="uid://c08aab6vuup23" path="res://resources/wave.gd" id="12_h4biv"]
+
+[sub_resource type="Resource" id="Resource_8v1ax"]
+script = ExtResource("12_h4biv")
+time_until = 5.0
+spawns = Dictionary[PackedScene, int]({
+ExtResource("10_srtdl"): 1
+})
+
+[sub_resource type="Resource" id="Resource_r03qw"]
+script = ExtResource("12_h4biv")
+time_until = 5.0
+spawns = Dictionary[PackedScene, int]({
+ExtResource("10_srtdl"): 3
+})
+
+[sub_resource type="Resource" id="Resource_icotl"]
+script = ExtResource("11_mfu61")
+enemy_scene = ExtResource("10_srtdl")
+waves = Array[ExtResource("12_h4biv")]([SubResource("Resource_8v1ax"), SubResource("Resource_r03qw")])
+metadata/_custom_type_script = "uid://brnryghrbtk6j"
+
+[node name="Game2" type="Node2D" unique_id=1962786476]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=763065581]
+position = Vector2(492, 358)
+
+[node name="Background" type="TileMapLayer" parent="Node2D" unique_id=2025064346]
+position = Vector2(-14, 20)
+tile_map_data = PackedByteArray("AAAAAP7/BwAEAAgAAAD///7/BwAFAAEAAAD+////BwAFAAEAAAD///3/BwAEAAgAAAD+//7/BwAEAAYAAAD9////BwAEAAQAAAAAAP3/BwAFAAEAAAD+/wAABwAFAAEAAAABAAEABwAFAAEAAAD8/wIABwAEAAoAAAD9/wIABwAEAAQAAAD+/wIABwAEAAkAAAD//wIABwAFAAEAAAAAAAIABwAFAAEAAAABAAIABwAEAAQAAAACAAIABwAFAAEAAAADAAIABwAFAAEAAAAEAAIABwAFAAEAAAAFAAIABwAEAAUAAAAEAAEABwAFAAEAAAAFAAAABwAFAAEAAAAEAP//BwAFAAEAAAAFAP7/BwAEAAYAAAAEAP3/BwAEAAgAAAAFAPz/BwAEAAkAAAAEAPz/BwAEAAcAAAADAPz/BwAEAAUAAAACAPz/BwAEAAUAAAABAPz/BwAEAAoAAAAAAPz/BwAEAAgAAAD///z/BwAEAAQAAAD+//z/BwAEAAQAAAD9//z/BwAEAAUAAAD8//z/BwAEAAgAAAD7//3/BwAEAAkAAAD8//7/BwAFAAEAAAD7//7/BwAEAAUAAAD7////BwAEAAUAAAD7/wAABwAEAAgAAAD7/wEABwAEAAoAAAD8/wAABwAEAAQAAAD9//7/BwAEAAgAAAD8//3/BwAEAAkAAAD9//3/BwAHAAQAAAD+//3/BwAEAAgAAAD7/wIABwAFAAEAAAD+/wEABwAFAAEAAAAAAAEABwAFAAEAAAACAAEABwAFAAEAAAADAAEABwAEAAcAAAAEAAAABwAFAAEAAAAEAP7/BwAEAAoAAAACAP3/BwAEAAoAAAACAP7/BwAFAAEAAAACAAAABwAFAAEAAAADAAAABwAFAAEAAAADAP7/BwAFAAEAAAABAAAABwAFAAEAAAACAP//BwAEAAoAAAABAP3/BwAEAAQAAAAFAP3/BwAEAAgAAAAFAAEABwAFAAEAAAAFAP//BwAFAAEAAAD7//z/BwAEAAoAAAADAP3/BwAFAAEAAAD9/wEABwAEAAkAAAD9/wAABwAEAAcAAAD8////BwAEAAkAAAAAAP//BwAFAAEAAAD/////BwAEAAUAAAD//wEABwAFAAEAAAAAAAAABwAEAAcAAAD//wAABwAEAAkAAAADAP//BwAFAAEAAAABAP7/BwAFAAEAAAABAP//BwAFAAEAAAD7/wMABwAEAAcAAAD8/wQABwAFAAEAAAD7/wUABwAEAAYAAAD8/wYABwAEAAcAAAD8/wUABwAFAAEAAAD9/wYABwAFAAEAAAD9/wUABwAEAAkAAAD9/wQABwAEAAQAAAD8/wMABwAEAAQAAAD7/wQABwAFAAEAAAD7/wYABwAEAAQAAAD+/wYABwAEAAQAAAD//wYABwAEAAcAAAAAAAYABwAFAAEAAAABAAYABwAFAAEAAAACAAYABwAFAAEAAAAEAAYABwAEAAcAAAAFAAYABwAEAAoAAAAGAAYABwAEAAUAAAAHAAYABwAFAAEAAAAIAAYABwAEAAUAAAAJAAYABwAEAAQAAAAKAAYABwAEAAYAAAALAAYABwAEAAkAAAALAAUABwAEAAoAAAALAAQABwAEAAkAAAALAAMABwAEAAoAAAALAAIABwAEAAoAAAALAAEABwAFAAEAAAALAAAABwAEAAoAAAALAP//BwAEAAYAAAALAP7/BwAEAAgAAAALAP3/BwAEAAQAAAALAPz/BwAEAAkAAAAMAPz/BwAEAAkAAAAMAP7/BwAEAAkAAAAMAAAABwAEAAUAAAAMAAIABwAEAAcAAAAMAAQABwAEAAQAAAAMAAYABwAEAAgAAAAKAAUABwAEAAkAAAAJAAUABwAEAAYAAAAIAAUABwAEAAoAAAAHAAUABwAEAAgAAAAGAAUABwAFAAEAAAAFAAUABwAFAAEAAAAEAAUABwAFAAEAAAADAAUABwAEAAcAAAACAAUABwAFAAEAAAABAAUABwAFAAEAAAAAAAUABwAFAAEAAAD//wUABwAEAAUAAAD+/wUABwAEAAYAAAD//wQABwAFAAEAAAAAAAQABwAFAAEAAAD//wMABwAFAAEAAAD+/wMABwAFAAEAAAD9/wMABwAFAAEAAAAAAAMABwAFAAEAAAABAAMABwAFAAEAAAACAAMABwAFAAEAAAADAAMABwAFAAEAAAAEAAMABwAFAAEAAAAFAAMABwAFAAEAAAADAAQABwAFAAEAAAACAAQABwAEAAgAAAABAAQABwAFAAEAAAAEAAQABwAFAAEAAAD+/wQABwAEAAQAAAAFAAQABwAEAAQAAAAGAAQABwAFAAEAAAAHAAQABwAFAAEAAAAHAAMABwAFAAEAAAAIAAMABwAFAAEAAAAKAAMABwAEAAQAAAAJAAQABwAEAAcAAAAKAAQABwAEAAoAAAAGAAMABwAFAAEAAAAHAAIABwAFAAEAAAAHAAEABwAFAAEAAAAHAAAABwAFAAEAAAAGAP//BwAFAAEAAAAHAP7/BwAEAAgAAAAHAP//BwAFAAEAAAAIAAAABwAFAAEAAAAGAAIABwAFAAEAAAAGAAEABwAFAAEAAAAHAP3/BwAEAAQAAAAHAPz/BwAFAAEAAAAGAP3/BwAEAAYAAAAGAPz/BwAEAAoAAAAGAP7/BwAEAAQAAAAGAAAABwAFAAEAAAAIAPz/BwAEAAUAAAAJAPz/BwAEAAQAAAAKAPz/BwAEAAkAAAAKAP3/BwAEAAUAAAAKAP//BwAEAAQAAAAKAAAABwAFAAEAAAAJAAEABwAFAAEAAAAJAAIABwAFAAEAAAAKAAEABwAFAAEAAAAIAAEABwAFAAEAAAAKAAIABwAEAAYAAAAIAAIABwAFAAEAAAAIAAQABwAFAAEAAAAKAP7/BwAEAAkAAAAJAP//BwAEAAQAAAAJAP7/BwAEAAkAAAAIAP//BwAFAAEAAAAJAAAABwAEAAkAAAAJAP3/BwAEAAcAAAAIAP3/BwAEAAoAAAAIAP7/BwAEAAYAAAAJAAMABwAFAAEAAAADAAYABwAFAAEAAAD8/wEABwACAAgAAAA=")
+tile_set = ExtResource("1_y3jp3")
+
+[node name="Items" type="TileMapLayer" parent="Node2D" unique_id=1822238894]
+position = Vector2(-14, 20)
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAABAADAAQAAAAAAAAAAQADAP7/AAAAAAAABQD//wQAAAAAAAAAAwD///7/AAAAAAAAAwAGAP//AAAAAAAAAwAGAAMAAAAAAAAAAwA=")
+tile_set = ExtResource("1_y3jp3")
+
+[node name="Player" parent="." unique_id=1156714101 instance=ExtResource("2_x61i4")]
+position = Vector2(87, 453)
+inventory = ExtResource("3_7hjhr")
+
+[node name="Control" parent="Player" unique_id=1635423330 instance=ExtResource("4_81dqw")]
+offset_left = 1.0
+offset_top = -95.0
+offset_right = 1.0
+offset_bottom = -95.0
+inventory = ExtResource("3_7hjhr")
+
+[node name="ScreenGui" parent="." unique_id=1377915187 instance=ExtResource("5_mjbgu")]
+
+[node name="Cheats" type="Node" parent="." unique_id=1279471357 node_paths=PackedStringArray("player")]
+script = ExtResource("6_saj2p")
+player = NodePath("../Player")
+resources = Array[Resource]([ExtResource("7_30gl7"), ExtResource("8_iya21")])
+
+[node name="SpawnPoint" type="Node2D" parent="." unique_id=796133392]
+position = Vector2(1744, 514)
+
+[node name="Spawner" parent="SpawnPoint" unique_id=215469802 node_paths=PackedStringArray("spawn_point") instance=ExtResource("9_seakg")]
+offset_left = -46.0
+offset_top = -123.0
+offset_right = -46.0
+offset_bottom = -123.0
+spawn_point = NodePath("..")
+spawn_order = SubResource("Resource_icotl")
+
+[editable path="ScreenGui"]

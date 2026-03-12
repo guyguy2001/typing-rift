@@ -4,9 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbbv6hrdap1g2" path="res://scenes/player.tscn" id="2_jqwjr"]
 [ext_resource type="Resource" uid="uid://c66kmfwchye14" path="res://resources/player_inventory2.tres" id="3_0jy3h"]
 [ext_resource type="PackedScene" uid="uid://dqx3t4o2yqij6" path="res://scenes/inventory2_ui.tscn" id="4_u5tar"]
-[ext_resource type="PackedScene" uid="uid://dkn8qucpyi1xk" path="res://typing_lib/input_feedback_bar.tscn" id="6_i3xn2"]
-[ext_resource type="PackedScene" uid="uid://dss38r3qiqwod" path="res://scenes/game2/building_list_gui.tscn" id="7_0jy3h"]
-[ext_resource type="PackedScene" uid="uid://deu726qowrw3r" path="res://scenes/sidequest/sidequest_gui.tscn" id="7_u5tar"]
+[ext_resource type="PackedScene" uid="uid://uu2dm22ghxi7" path="res://scenes/game2/screen_gui.tscn" id="5_prof6"]
 [ext_resource type="PackedScene" uid="uid://t404dvsxbvgh" path="res://scenes/game2/spawner.tscn" id="8_prof6"]
 [ext_resource type="PackedScene" uid="uid://civkbhim6y82x" path="res://scenes/enemy.tscn" id="8_u5tar"]
 [ext_resource type="Script" uid="uid://dk32t63iecppr" path="res://scenes/singletons/debug_cheats.gd" id="9_t6l4y"]
@@ -61,34 +59,7 @@ offset_right = 1.0
 offset_bottom = -95.0
 inventory = ExtResource("3_0jy3h")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1584901561]
-
-[node name="InputFeedbackBar" parent="CanvasLayer" unique_id=1307278959 instance=ExtResource("6_i3xn2")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -100.0
-offset_right = 100.0
-offset_bottom = -58.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-text = "Foo"
-
-[node name="BuildingListGui" parent="CanvasLayer" unique_id=1589639855 instance=ExtResource("7_0jy3h")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -355.0
-offset_top = 12.0
-offset_right = -10.0
-offset_bottom = 240.0
-grow_horizontal = 0
-
-[node name="SidequestGui" parent="CanvasLayer" unique_id=432298445 instance=ExtResource("7_u5tar")]
+[node name="ScreenGui" parent="." unique_id=1377915187 instance=ExtResource("5_prof6")]
 
 [node name="Cheats" type="Node" parent="." unique_id=1279471357 node_paths=PackedStringArray("player")]
 script = ExtResource("9_t6l4y")
@@ -105,3 +76,5 @@ offset_right = -46.0
 offset_bottom = -123.0
 spawn_point = NodePath("..")
 spawn_order = SubResource("Resource_icotl")
+
+[editable path="ScreenGui"]
