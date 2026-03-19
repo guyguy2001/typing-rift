@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bptx2opg8nea7" path="res://assets/Alien Spaceship Pack/PNG/shipPink_manned.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://y407b6wthejp" path="res://scenes/player.gd" id="1_qhqgy"]
 [ext_resource type="Script" uid="uid://bxlklcy24nqfh" path="res://scenes/components/auto_attack.gd" id="3_qhqgy"]
-[ext_resource type="Script" uid="uid://g4bac60htvji" path="res://scenes/components/approach.gd" id="4_dqkch"]
+[ext_resource type="PackedScene" uid="uid://bxcrxullwgu4m" path="res://scenes/approach_component.tscn" id="4_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://df521ffn10g7w" path="res://typing_lib/typable_label.tscn" id="5_qlg0r"]
 
 [node name="Player" type="Node2D" unique_id=61268919 groups=["player"]]
@@ -17,9 +17,7 @@ texture = ExtResource("1_3vyb7")
 script = ExtResource("3_qhqgy")
 metadata/_custom_type_script = "uid://bxlklcy24nqfh"
 
-[node name="ApproachComponent" type="Node" parent="." unique_id=493287222]
-script = ExtResource("4_dqkch")
-metadata/_custom_type_script = "uid://g4bac60htvji"
+[node name="ApproachComponent" parent="." unique_id=1907913277 instance=ExtResource("4_qlg0r")]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=444220302]
 offset_left = -45.0
