@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bxcrxullwgu4m"]
+
+[ext_resource type="Script" uid="uid://g4bac60htvji" path="res://scenes/components/approach.gd" id="1_ffxw7"]
+
+[node name="ApproachComponent" type="NavigationAgent2D" unique_id=1907913277]
+script = ExtResource("1_ffxw7")
