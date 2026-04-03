@@ -16,10 +16,10 @@ func _ready() -> void:
 
 func _on_focus_changed(sidequest_: Sidequest) -> void:
 	self.sidequest = sidequest_
-	self.sidequest.item_done.connect(func (_word): self._setup_items())
+	self.sidequest.item_done.connect(func (_word: String) -> void: self._setup_items())
 	self._setup_items()
 
-func _setup_items():
+func _setup_items() -> void:
 	for child in container.get_children():
 		child.queue_free()
 

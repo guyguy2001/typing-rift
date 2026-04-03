@@ -1,4 +1,4 @@
-extends Node
+extends Control
 
 const SPAWN_RADIUS = 100
 
@@ -22,8 +22,8 @@ func _spawn_wave() -> void:
 		print("You win!!!!")
 		return
 
-	var wave = spawn_order.waves[wave_number]
-	for enemy_type in wave.spawns:
+	var wave := spawn_order.waves[wave_number]
+	for enemy_type: PackedScene in wave.spawns:
 		for i in range(wave.spawns[enemy_type]):
 			_spawn_enemy()
 
@@ -33,7 +33,7 @@ func _spawn_wave() -> void:
 		spawn_timer.wait_time = spawn_order.waves[wave_number].time_until
 
 func _spawn_enemy() -> void:
-	var enemy = spawn_order.enemy_scene.instantiate()
+	var enemy: Node2D = spawn_order.enemy_scene.instantiate() as Node2D
 	enemy.global_position = (
 		spawn_point.global_position +
 		Vector2(

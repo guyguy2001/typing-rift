@@ -3,7 +3,7 @@ extends BaseInventory
 class_name Inventory
 
 @export var item_type: Item = null
-@export var amount = 0
+@export var amount: int = 0
 @export var capacity: int = -1 # -1 means infinite capacity
 
 func try_add(item_type_: Item, amount_: int) -> int:
@@ -27,7 +27,7 @@ func try_transfer_to(target_inventory: BaseInventory, item_type_: Item, amount_:
 	if self.item_type != item_type_ or self.amount < amount_:
 		return false
 	
-	var transfered_amount = target_inventory.try_add(self.item_type, amount_)
+	var transfered_amount := target_inventory.try_add(self.item_type, amount_ as int)
 	if transfered_amount > 0:
 		self.amount -= transfered_amount
 		if self.amount == 0:

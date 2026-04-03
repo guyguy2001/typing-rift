@@ -2,9 +2,9 @@ extends Node2D
 
 @export var resource: Item
 
-var _connected_inventory = null
+var _connected_inventory: Inventory = null
 
-@onready var target = $Target
+@onready var target: Target = $Target
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,7 +1,7 @@
 extends Node
 
 @export var buildings: Array[BuildingData] = []
-var selected_index = -1:
+var selected_index: int = -1:
 	set(value):
 		selected_index = value
 		if selected_index >= 0:

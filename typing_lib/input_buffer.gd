@@ -13,11 +13,12 @@ var max_length: int = 50 # Prevent infinite strings
 func _input(event: InputEvent) -> void:
 	# TODO: Should this be here or in the parent? I.e. should this be pure logic or IO as well
 	if event is InputEventKey:
-		if event.pressed and _handle_character(event.keycode, event.unicode):
+		var event2 := event as InputEventKey
+		if event2.pressed and _handle_character(event2.keycode, event2.unicode):
 			# TODO: Do I want this?
 			get_viewport().set_input_as_handled() # Mark input as handled to prevent further processing
 
-func _handle_character(keycode: int, unicode: int):
+func _handle_character(keycode: Key, unicode: int) -> bool:
 	# Handle specific key presses
 	if keycode == KEY_BACKSPACE:
 		if current_text.length() > 0:

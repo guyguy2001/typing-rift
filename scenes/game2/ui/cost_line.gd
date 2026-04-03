@@ -3,6 +3,7 @@ extends HBoxContainer
 class_name CostLine
 
 const item_amount_scene = preload("res://scenes/game2/ui/item_amount.tscn")
+const ItemAmount = preload("res://scenes/game2/ui/item_amount.gd")
 
 # TODO: Find a way to assert that this is set
 @export var cost: Dictionary[Item, int] = {}
@@ -18,8 +19,8 @@ func _redraw() -> void:
 	for child in get_children():
 		child.queue_free()
 
-	for item in cost.keys():
-		var label = item_amount_scene.instantiate()
+	for item: Item in cost.keys():
+		var label := item_amount_scene.instantiate() as ItemAmount
 		label.item = item
 		label.amount = cost[item]
 		add_child(label)

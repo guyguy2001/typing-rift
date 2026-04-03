@@ -27,15 +27,15 @@ func on_input_changed(current_input: String) -> void:
 	update_text_display(current_input)
 
 
-func _color_with(text_: String, color: Color):
+func _color_with(text_: String, color: Color) -> String:
 	return "[color=#%s]%s[/color]" % [color.to_html(false), text_]
 
 # static
-func _get_colored_text(label_text: String, typed_text: String):
+func _get_colored_text(label_text: String, typed_text: String) -> String:
 	if typed_text.is_empty() or not label_text.begins_with(typed_text):
 		return _color_with(target_text, default_color)
-	var matched_part = label_text.substr(0, typed_text.length())
-	var remaining_part = label_text.substr(typed_text.length())
+	var matched_part := label_text.substr(0, typed_text.length())
+	var remaining_part := label_text.substr(typed_text.length())
 	return _color_with(matched_part, active_color) + _color_with(remaining_part, default_color)
 
 func update_text_display(current_input: String) -> void:

@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Shot
+
 
 @export var source: Node2D
 @export var dest: Node2D
@@ -33,5 +35,5 @@ func _process(delta: float) -> void:
 
 
 func _draw() -> void:
-	var color = Color.from_hsv(0.5, 1, 1, opacity)
+	var color := Color.from_hsv(0.5, 1, 1, opacity)
 	draw_line(source_pos, dest_pos, color, 5)

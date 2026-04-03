@@ -22,6 +22,14 @@ SidequestManager="*res://scenes/sidequest/sidequest_manager.gd"
 BuildingManagerG="*res://scenes/game2/building_manager.tscn"
 WordsManagerG="*res://scenes/singletons/words_manager.tscn"
 
+[debug]
+
+gdscript/warnings/unused_signal=0
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
+gdscript/warnings/unsafe_call_argument=1
+
 [display]
 
 window/size/viewport_width=1920

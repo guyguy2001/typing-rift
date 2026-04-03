@@ -2,8 +2,8 @@ extends Panel
 
 @export var inventory: Inventory
 
-@onready var texture = $TextureRect
-@onready var amount_label = $Amount
+@onready var texture: TextureRect = $TextureRect
+@onready var amount_label: Label = $Amount
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

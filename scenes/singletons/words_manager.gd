@@ -5,7 +5,7 @@ extends Node
 var _used_words: Dictionary[String, bool] = {}
 var _free_words: Dictionary[String, bool] = {}
 
-func _ready():
+func _ready() -> void:
 	for word in self.word_pool:
 		self._free_words[word] = true
 
@@ -16,7 +16,7 @@ func _consume_word(word: String) -> void:
 	self._used_words[word] = true
 
 func get_word() -> String:
-	var index = randi() % self._free_words.size()
-	var word = self._free_words.keys()[index]
+	var index := randi() % self._free_words.size()
+	var word: String = self._free_words.keys()[index]
 	self._consume_word(word)
 	return word

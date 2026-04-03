@@ -3,7 +3,7 @@ extends Node
 @export var player: Player
 @export var resources: Array[Resource]
 
-var CALLBACKS = {
+var CALLBACKS: Dictionary[String, Callable] = {
 	"$money": _add_money,
 }
 
@@ -19,4 +19,5 @@ func _on_word_submitted(word: String) -> void:
 func _add_money() -> void:
 	for resource in resources:
 		if resource is Item:
-			player.inventory.try_add(resource, 10)
+			var item := resource as Item
+			player.inventory.try_add(item, 10)

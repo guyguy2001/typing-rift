@@ -12,8 +12,8 @@ func _ready() -> void:
 	self.health_component.health_changed.connect(self._on_health_changed)
 	self._on_health_changed(self.health_component.health)
 
-func _on_max_health_changed(new_max_health) -> void:
+func _on_max_health_changed(new_max_health: float) -> void:
 	self.max_value = new_max_health
 
-func _on_health_changed(new_health) -> void:
+func _on_health_changed(new_health: float) -> void:
 	self.value = new_health

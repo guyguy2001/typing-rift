@@ -15,7 +15,7 @@ var _movement_delta := 0.0
 
 signal reached_target(who: Node2D, target: Node2D)
 
-func _ready():
+func _ready() -> void:
 	# These values need to be adjusted for the actor's speed
 	# and the navigation layout.
 	self.path_desired_distance = 4.0
@@ -28,7 +28,7 @@ func start_chasing(new_target: Node2D) -> void:
 	active = true  # TODO: Do I even need my own activate?
 	self.set_target_position(new_target.global_position)
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	if not target or not active:
 		return
 	# Docs: Do not query when the map has never synchronized and is empty.

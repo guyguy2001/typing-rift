@@ -13,7 +13,7 @@ func _start_woodcutting(_who: Node2D) -> void:
 	if buildable == null:
 		print("No building selected!")
 		return
-	var b = buildable.scene.instantiate()
+	var b := buildable.scene.instantiate() as Node2D
 	self.get_parent().add_child(b)
 	b.position = self.position
 

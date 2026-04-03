@@ -9,7 +9,7 @@ func _ready() -> void:
 	BuildingManagerG.building_selected.connect(self._on_building_selected)
 
 
-func _on_building_selected(_index: int, _building_data: BuildingData):
+func _on_building_selected(_index: int, _building_data: BuildingData) -> void:
 	# Big todo!!! Should this be in a builder component?
 	# Check if the player's approach component is pointing here
 	var player: Player = get_tree().get_first_node_in_group("player")
@@ -25,13 +25,13 @@ func _try_build(player: Player) -> void:
 		print("No building selected!")
 		return
 
-	var inventory = player.inventory as Inventory2
+	var inventory := player.inventory as Inventory2
 	assert(inventory != null)
 	if not inventory.try_pay(buildable.cost):
 		print("Not enough resources to build!")
 		return
 
-	var b = buildable.scene.instantiate()
+	var b := buildable.scene.instantiate() as Node2D
 	self.get_parent().add_child(b)
 	b.position = self.position
 

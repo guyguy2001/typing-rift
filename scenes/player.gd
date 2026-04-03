@@ -33,8 +33,8 @@ func _on_word_typed(word: String) -> void:
 	if word == "dash":
 		self._dash()
 	
-func _dash():
+func _dash() -> void:
 	self.approach_comp.dashing = true
 	get_tree().create_timer(0.5).timeout.connect(
-		func(): self.approach_comp.dashing = false
+		func() -> void: self.approach_comp.dashing = false
 	)

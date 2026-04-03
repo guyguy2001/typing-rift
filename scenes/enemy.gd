@@ -33,10 +33,10 @@ func _ready() -> void:
 
 func _find_closest_target() -> Node2D:
 	var closest_target: Node2D = null
-	var closest_distance_sq = INF
+	var closest_distance_sq := INF
 	for target_ in get_tree().get_nodes_in_group(TARGET_GROUP):
 		if target_ is Node2D:
-			var distance_sq = global_position.distance_squared_to(target_.global_position)
+			var distance_sq := global_position.distance_squared_to((target_ as Node2D).global_position)
 			if distance_sq < closest_distance_sq:
 				closest_distance_sq = distance_sq
 				closest_target = target_
